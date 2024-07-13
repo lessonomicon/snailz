@@ -1,0 +1,4056 @@
+{
+    "staff": [
+        {
+            "staff_id": 1,
+            "personal": "Lavanya",
+            "family": "Hayer"
+        },
+        {
+            "staff_id": 2,
+            "personal": "Sumer",
+            "family": "Tara"
+        },
+        {
+            "staff_id": 3,
+            "personal": "Kiaan",
+            "family": "Karnik"
+        },
+        {
+            "staff_id": 4,
+            "personal": "Yuvaan",
+            "family": "Kumar"
+        },
+        {
+            "staff_id": 5,
+            "personal": "Charvi",
+            "family": "Karnik"
+        },
+        {
+            "staff_id": 6,
+            "personal": "Advik",
+            "family": "Srivastava"
+        },
+        {
+            "staff_id": 7,
+            "personal": "Anay",
+            "family": "Varma"
+        }
+    ],
+    "experiment": [
+        {
+            "sample_id": 1,
+            "kind": "ELISA",
+            "start": "2023-11-04",
+            "end": "2023-11-04"
+        },
+        {
+            "sample_id": 2,
+            "kind": "JESS",
+            "start": "2023-11-01",
+            "end": "2023-11-01"
+        },
+        {
+            "sample_id": 3,
+            "kind": "JESS",
+            "start": "2023-11-08",
+            "end": "2023-11-08"
+        },
+        {
+            "sample_id": 4,
+            "kind": "JESS",
+            "start": "2023-11-07",
+            "end": "2023-11-09"
+        },
+        {
+            "sample_id": 5,
+            "kind": "ELISA",
+            "start": "2023-11-04",
+            "end": "2023-11-05"
+        },
+        {
+            "sample_id": 6,
+            "kind": "JESS",
+            "start": "2023-11-07",
+            "end": "2023-11-07"
+        },
+        {
+            "sample_id": 7,
+            "kind": "ELISA",
+            "start": "2023-11-03",
+            "end": "2023-11-03"
+        },
+        {
+            "sample_id": 8,
+            "kind": "ELISA",
+            "start": "2023-11-06",
+            "end": "2023-11-07"
+        },
+        {
+            "sample_id": 9,
+            "kind": "ELISA",
+            "start": "2023-11-05",
+            "end": "2023-11-07"
+        },
+        {
+            "sample_id": 10,
+            "kind": "JESS",
+            "start": "2023-11-02",
+            "end": "2023-11-03"
+        },
+        {
+            "sample_id": 11,
+            "kind": "ELISA",
+            "start": "2023-11-06",
+            "end": "2023-11-08"
+        },
+        {
+            "sample_id": 12,
+            "kind": "ELISA",
+            "start": "2023-11-06",
+            "end": "2023-11-07"
+        },
+        {
+            "sample_id": 13,
+            "kind": "JESS",
+            "start": "2023-11-09",
+            "end": null
+        },
+        {
+            "sample_id": 14,
+            "kind": "ELISA",
+            "start": "2023-11-08",
+            "end": "2023-11-09"
+        },
+        {
+            "sample_id": 15,
+            "kind": "JESS",
+            "start": "2023-11-02",
+            "end": "2023-11-04"
+        },
+        {
+            "sample_id": 16,
+            "kind": "JESS",
+            "start": "2023-11-04",
+            "end": "2023-11-06"
+        },
+        {
+            "sample_id": 17,
+            "kind": "ELISA",
+            "start": "2023-11-08",
+            "end": "2023-11-08"
+        },
+        {
+            "sample_id": 18,
+            "kind": "JESS",
+            "start": "2023-11-06",
+            "end": "2023-11-07"
+        },
+        {
+            "sample_id": 19,
+            "kind": "ELISA",
+            "start": "2023-11-07",
+            "end": "2023-11-09"
+        },
+        {
+            "sample_id": 20,
+            "kind": "JESS",
+            "start": "2023-11-06",
+            "end": "2023-11-07"
+        },
+        {
+            "sample_id": 21,
+            "kind": "JESS",
+            "start": "2023-11-04",
+            "end": "2023-11-06"
+        },
+        {
+            "sample_id": 22,
+            "kind": "JESS",
+            "start": "2023-11-09",
+            "end": null
+        },
+        {
+            "sample_id": 23,
+            "kind": "ELISA",
+            "start": "2023-11-08",
+            "end": "2023-11-09"
+        },
+        {
+            "sample_id": 24,
+            "kind": "JESS",
+            "start": "2023-11-08",
+            "end": null
+        },
+        {
+            "sample_id": 25,
+            "kind": "JESS",
+            "start": "2023-11-04",
+            "end": "2023-11-05"
+        },
+        {
+            "sample_id": 26,
+            "kind": "ELISA",
+            "start": "2023-11-03",
+            "end": "2023-11-05"
+        },
+        {
+            "sample_id": 27,
+            "kind": "JESS",
+            "start": "2023-11-05",
+            "end": "2023-11-07"
+        },
+        {
+            "sample_id": 28,
+            "kind": "JESS",
+            "start": "2023-11-06",
+            "end": "2023-11-08"
+        },
+        {
+            "sample_id": 29,
+            "kind": "JESS",
+            "start": "2023-11-04",
+            "end": "2023-11-06"
+        },
+        {
+            "sample_id": 30,
+            "kind": "JESS",
+            "start": "2023-11-09",
+            "end": "2023-11-09"
+        },
+        {
+            "sample_id": 31,
+            "kind": "JESS",
+            "start": "2023-11-04",
+            "end": "2023-11-04"
+        },
+        {
+            "sample_id": 32,
+            "kind": "JESS",
+            "start": "2023-11-04",
+            "end": "2023-11-06"
+        },
+        {
+            "sample_id": 33,
+            "kind": "ELISA",
+            "start": "2023-11-06",
+            "end": "2023-11-07"
+        },
+        {
+            "sample_id": 34,
+            "kind": "ELISA",
+            "start": "2023-11-03",
+            "end": "2023-11-05"
+        },
+        {
+            "sample_id": 35,
+            "kind": "ELISA",
+            "start": "2023-11-03",
+            "end": "2023-11-05"
+        },
+        {
+            "sample_id": 36,
+            "kind": "ELISA",
+            "start": "2023-11-05",
+            "end": "2023-11-05"
+        },
+        {
+            "sample_id": 37,
+            "kind": "JESS",
+            "start": "2023-11-02",
+            "end": "2023-11-02"
+        },
+        {
+            "sample_id": 38,
+            "kind": "ELISA",
+            "start": "2023-11-04",
+            "end": "2023-11-04"
+        },
+        {
+            "sample_id": 39,
+            "kind": "JESS",
+            "start": "2023-11-07",
+            "end": "2023-11-09"
+        },
+        {
+            "sample_id": 40,
+            "kind": "ELISA",
+            "start": "2023-11-02",
+            "end": "2023-11-03"
+        },
+        {
+            "sample_id": 41,
+            "kind": "ELISA",
+            "start": "2023-11-09",
+            "end": null
+        },
+        {
+            "sample_id": 42,
+            "kind": "ELISA",
+            "start": "2023-11-05",
+            "end": "2023-11-06"
+        },
+        {
+            "sample_id": 43,
+            "kind": "ELISA",
+            "start": "2023-11-07",
+            "end": "2023-11-09"
+        },
+        {
+            "sample_id": 44,
+            "kind": "JESS",
+            "start": "2023-11-07",
+            "end": "2023-11-07"
+        },
+        {
+            "sample_id": 45,
+            "kind": "JESS",
+            "start": "2023-11-03",
+            "end": "2023-11-03"
+        },
+        {
+            "sample_id": 46,
+            "kind": "JESS",
+            "start": "2023-11-04",
+            "end": "2023-11-06"
+        },
+        {
+            "sample_id": 47,
+            "kind": "JESS",
+            "start": "2023-11-06",
+            "end": "2023-11-08"
+        },
+        {
+            "sample_id": 48,
+            "kind": "ELISA",
+            "start": "2023-11-03",
+            "end": "2023-11-04"
+        },
+        {
+            "sample_id": 49,
+            "kind": "ELISA",
+            "start": "2023-11-05",
+            "end": "2023-11-05"
+        },
+        {
+            "sample_id": 50,
+            "kind": "ELISA",
+            "start": "2023-11-04",
+            "end": "2023-11-05"
+        },
+        {
+            "sample_id": 51,
+            "kind": "ELISA",
+            "start": "2023-11-04",
+            "end": "2023-11-04"
+        },
+        {
+            "sample_id": 52,
+            "kind": "ELISA",
+            "start": "2023-11-01",
+            "end": "2023-11-02"
+        },
+        {
+            "sample_id": 53,
+            "kind": "ELISA",
+            "start": "2023-11-06",
+            "end": "2023-11-06"
+        },
+        {
+            "sample_id": 54,
+            "kind": "JESS",
+            "start": "2023-11-01",
+            "end": "2023-11-02"
+        },
+        {
+            "sample_id": 55,
+            "kind": "ELISA",
+            "start": "2023-11-04",
+            "end": "2023-11-05"
+        },
+        {
+            "sample_id": 56,
+            "kind": "JESS",
+            "start": "2023-11-03",
+            "end": "2023-11-03"
+        },
+        {
+            "sample_id": 57,
+            "kind": "ELISA",
+            "start": "2023-11-09",
+            "end": null
+        },
+        {
+            "sample_id": 58,
+            "kind": "JESS",
+            "start": "2023-11-07",
+            "end": "2023-11-08"
+        },
+        {
+            "sample_id": 59,
+            "kind": "JESS",
+            "start": "2023-11-09",
+            "end": "2023-11-09"
+        },
+        {
+            "sample_id": 60,
+            "kind": "ELISA",
+            "start": "2023-11-09",
+            "end": "2023-11-09"
+        },
+        {
+            "sample_id": 61,
+            "kind": "ELISA",
+            "start": "2023-11-06",
+            "end": "2023-11-08"
+        },
+        {
+            "sample_id": 62,
+            "kind": "JESS",
+            "start": "2023-11-08",
+            "end": "2023-11-09"
+        },
+        {
+            "sample_id": 63,
+            "kind": "JESS",
+            "start": "2023-11-09",
+            "end": null
+        },
+        {
+            "sample_id": 64,
+            "kind": "ELISA",
+            "start": "2023-11-04",
+            "end": "2023-11-05"
+        },
+        {
+            "sample_id": 65,
+            "kind": "JESS",
+            "start": "2023-11-09",
+            "end": null
+        },
+        {
+            "sample_id": 66,
+            "kind": "JESS",
+            "start": "2023-11-06",
+            "end": "2023-11-06"
+        },
+        {
+            "sample_id": 67,
+            "kind": "JESS",
+            "start": "2023-11-02",
+            "end": "2023-11-03"
+        },
+        {
+            "sample_id": 68,
+            "kind": "ELISA",
+            "start": "2023-11-06",
+            "end": "2023-11-07"
+        },
+        {
+            "sample_id": 69,
+            "kind": "ELISA",
+            "start": "2023-11-05",
+            "end": "2023-11-07"
+        },
+        {
+            "sample_id": 70,
+            "kind": "ELISA",
+            "start": "2023-11-05",
+            "end": "2023-11-06"
+        },
+        {
+            "sample_id": 71,
+            "kind": "ELISA",
+            "start": "2023-11-01",
+            "end": "2023-11-02"
+        },
+        {
+            "sample_id": 72,
+            "kind": "JESS",
+            "start": "2023-11-04",
+            "end": "2023-11-05"
+        },
+        {
+            "sample_id": 73,
+            "kind": "JESS",
+            "start": "2023-11-03",
+            "end": "2023-11-05"
+        },
+        {
+            "sample_id": 74,
+            "kind": "JESS",
+            "start": "2023-11-02",
+            "end": "2023-11-02"
+        },
+        {
+            "sample_id": 75,
+            "kind": "JESS",
+            "start": "2023-11-04",
+            "end": "2023-11-04"
+        },
+        {
+            "sample_id": 76,
+            "kind": "ELISA",
+            "start": "2023-11-09",
+            "end": "2023-11-09"
+        },
+        {
+            "sample_id": 77,
+            "kind": "JESS",
+            "start": "2023-11-04",
+            "end": "2023-11-05"
+        },
+        {
+            "sample_id": 78,
+            "kind": "JESS",
+            "start": "2023-11-05",
+            "end": "2023-11-06"
+        },
+        {
+            "sample_id": 79,
+            "kind": "JESS",
+            "start": "2023-11-09",
+            "end": "2023-11-09"
+        },
+        {
+            "sample_id": 80,
+            "kind": "ELISA",
+            "start": "2023-11-02",
+            "end": "2023-11-02"
+        },
+        {
+            "sample_id": 81,
+            "kind": "ELISA",
+            "start": "2023-11-09",
+            "end": null
+        },
+        {
+            "sample_id": 82,
+            "kind": "ELISA",
+            "start": "2023-11-01",
+            "end": "2023-11-03"
+        },
+        {
+            "sample_id": 83,
+            "kind": "ELISA",
+            "start": "2023-11-08",
+            "end": "2023-11-09"
+        },
+        {
+            "sample_id": 84,
+            "kind": "JESS",
+            "start": "2023-11-03",
+            "end": "2023-11-03"
+        },
+        {
+            "sample_id": 85,
+            "kind": "ELISA",
+            "start": "2023-11-03",
+            "end": "2023-11-04"
+        },
+        {
+            "sample_id": 86,
+            "kind": "JESS",
+            "start": "2023-11-09",
+            "end": null
+        },
+        {
+            "sample_id": 87,
+            "kind": "ELISA",
+            "start": "2023-11-07",
+            "end": "2023-11-07"
+        },
+        {
+            "sample_id": 88,
+            "kind": "JESS",
+            "start": "2023-11-05",
+            "end": "2023-11-06"
+        },
+        {
+            "sample_id": 89,
+            "kind": "JESS",
+            "start": "2023-11-09",
+            "end": "2023-11-09"
+        },
+        {
+            "sample_id": 90,
+            "kind": "JESS",
+            "start": "2023-11-08",
+            "end": "2023-11-09"
+        },
+        {
+            "sample_id": 91,
+            "kind": "ELISA",
+            "start": "2023-11-09",
+            "end": null
+        },
+        {
+            "sample_id": 92,
+            "kind": "ELISA",
+            "start": "2023-11-01",
+            "end": "2023-11-02"
+        },
+        {
+            "sample_id": 93,
+            "kind": "JESS",
+            "start": "2023-11-03",
+            "end": "2023-11-05"
+        },
+        {
+            "sample_id": 94,
+            "kind": "ELISA",
+            "start": "2023-11-06",
+            "end": "2023-11-06"
+        },
+        {
+            "sample_id": 95,
+            "kind": "ELISA",
+            "start": "2023-11-04",
+            "end": "2023-11-05"
+        },
+        {
+            "sample_id": 96,
+            "kind": "JESS",
+            "start": "2023-11-05",
+            "end": "2023-11-06"
+        },
+        {
+            "sample_id": 97,
+            "kind": "ELISA",
+            "start": "2023-11-09",
+            "end": null
+        },
+        {
+            "sample_id": 98,
+            "kind": "JESS",
+            "start": "2023-11-03",
+            "end": "2023-11-05"
+        },
+        {
+            "sample_id": 99,
+            "kind": "JESS",
+            "start": "2023-11-06",
+            "end": "2023-11-07"
+        },
+        {
+            "sample_id": 100,
+            "kind": "ELISA",
+            "start": "2023-11-04",
+            "end": "2023-11-06"
+        }
+    ],
+    "performed": [
+        {
+            "staff_id": 4,
+            "sample_id": 1
+        },
+        {
+            "staff_id": 5,
+            "sample_id": 1
+        },
+        {
+            "staff_id": 3,
+            "sample_id": 2
+        },
+        {
+            "staff_id": 5,
+            "sample_id": 2
+        },
+        {
+            "staff_id": 6,
+            "sample_id": 3
+        },
+        {
+            "staff_id": 7,
+            "sample_id": 4
+        },
+        {
+            "staff_id": 5,
+            "sample_id": 4
+        },
+        {
+            "staff_id": 2,
+            "sample_id": 4
+        },
+        {
+            "staff_id": 1,
+            "sample_id": 5
+        },
+        {
+            "staff_id": 7,
+            "sample_id": 5
+        },
+        {
+            "staff_id": 6,
+            "sample_id": 5
+        },
+        {
+            "staff_id": 5,
+            "sample_id": 6
+        },
+        {
+            "staff_id": 7,
+            "sample_id": 7
+        },
+        {
+            "staff_id": 1,
+            "sample_id": 7
+        },
+        {
+            "staff_id": 3,
+            "sample_id": 7
+        },
+        {
+            "staff_id": 3,
+            "sample_id": 8
+        },
+        {
+            "staff_id": 4,
+            "sample_id": 8
+        },
+        {
+            "staff_id": 6,
+            "sample_id": 9
+        },
+        {
+            "staff_id": 2,
+            "sample_id": 9
+        },
+        {
+            "staff_id": 4,
+            "sample_id": 10
+        },
+        {
+            "staff_id": 5,
+            "sample_id": 11
+        },
+        {
+            "staff_id": 1,
+            "sample_id": 11
+        },
+        {
+            "staff_id": 4,
+            "sample_id": 12
+        },
+        {
+            "staff_id": 7,
+            "sample_id": 12
+        },
+        {
+            "staff_id": 5,
+            "sample_id": 12
+        },
+        {
+            "staff_id": 3,
+            "sample_id": 13
+        },
+        {
+            "staff_id": 1,
+            "sample_id": 13
+        },
+        {
+            "staff_id": 1,
+            "sample_id": 14
+        },
+        {
+            "staff_id": 3,
+            "sample_id": 15
+        },
+        {
+            "staff_id": 1,
+            "sample_id": 15
+        },
+        {
+            "staff_id": 5,
+            "sample_id": 15
+        },
+        {
+            "staff_id": 3,
+            "sample_id": 16
+        },
+        {
+            "staff_id": 7,
+            "sample_id": 16
+        },
+        {
+            "staff_id": 4,
+            "sample_id": 16
+        },
+        {
+            "staff_id": 7,
+            "sample_id": 17
+        },
+        {
+            "staff_id": 4,
+            "sample_id": 18
+        },
+        {
+            "staff_id": 1,
+            "sample_id": 18
+        },
+        {
+            "staff_id": 3,
+            "sample_id": 19
+        },
+        {
+            "staff_id": 4,
+            "sample_id": 19
+        },
+        {
+            "staff_id": 1,
+            "sample_id": 20
+        },
+        {
+            "staff_id": 7,
+            "sample_id": 20
+        },
+        {
+            "staff_id": 5,
+            "sample_id": 21
+        },
+        {
+            "staff_id": 4,
+            "sample_id": 21
+        },
+        {
+            "staff_id": 1,
+            "sample_id": 22
+        },
+        {
+            "staff_id": 6,
+            "sample_id": 23
+        },
+        {
+            "staff_id": 5,
+            "sample_id": 23
+        },
+        {
+            "staff_id": 7,
+            "sample_id": 24
+        },
+        {
+            "staff_id": 4,
+            "sample_id": 24
+        },
+        {
+            "staff_id": 2,
+            "sample_id": 24
+        },
+        {
+            "staff_id": 7,
+            "sample_id": 25
+        },
+        {
+            "staff_id": 4,
+            "sample_id": 25
+        },
+        {
+            "staff_id": 6,
+            "sample_id": 26
+        },
+        {
+            "staff_id": 4,
+            "sample_id": 26
+        },
+        {
+            "staff_id": 1,
+            "sample_id": 26
+        },
+        {
+            "staff_id": 1,
+            "sample_id": 27
+        },
+        {
+            "staff_id": 7,
+            "sample_id": 27
+        },
+        {
+            "staff_id": 1,
+            "sample_id": 28
+        },
+        {
+            "staff_id": 4,
+            "sample_id": 29
+        },
+        {
+            "staff_id": 5,
+            "sample_id": 29
+        },
+        {
+            "staff_id": 2,
+            "sample_id": 29
+        },
+        {
+            "staff_id": 5,
+            "sample_id": 30
+        },
+        {
+            "staff_id": 3,
+            "sample_id": 31
+        },
+        {
+            "staff_id": 5,
+            "sample_id": 32
+        },
+        {
+            "staff_id": 2,
+            "sample_id": 32
+        },
+        {
+            "staff_id": 7,
+            "sample_id": 33
+        },
+        {
+            "staff_id": 3,
+            "sample_id": 33
+        },
+        {
+            "staff_id": 2,
+            "sample_id": 33
+        },
+        {
+            "staff_id": 4,
+            "sample_id": 34
+        },
+        {
+            "staff_id": 1,
+            "sample_id": 35
+        },
+        {
+            "staff_id": 6,
+            "sample_id": 36
+        },
+        {
+            "staff_id": 7,
+            "sample_id": 36
+        },
+        {
+            "staff_id": 6,
+            "sample_id": 37
+        },
+        {
+            "staff_id": 3,
+            "sample_id": 37
+        },
+        {
+            "staff_id": 1,
+            "sample_id": 37
+        },
+        {
+            "staff_id": 3,
+            "sample_id": 38
+        },
+        {
+            "staff_id": 1,
+            "sample_id": 39
+        },
+        {
+            "staff_id": 7,
+            "sample_id": 39
+        },
+        {
+            "staff_id": 6,
+            "sample_id": 39
+        },
+        {
+            "staff_id": 2,
+            "sample_id": 40
+        },
+        {
+            "staff_id": 1,
+            "sample_id": 40
+        },
+        {
+            "staff_id": 7,
+            "sample_id": 41
+        },
+        {
+            "staff_id": 7,
+            "sample_id": 42
+        },
+        {
+            "staff_id": 4,
+            "sample_id": 42
+        },
+        {
+            "staff_id": 4,
+            "sample_id": 43
+        },
+        {
+            "staff_id": 2,
+            "sample_id": 43
+        },
+        {
+            "staff_id": 1,
+            "sample_id": 44
+        },
+        {
+            "staff_id": 3,
+            "sample_id": 45
+        },
+        {
+            "staff_id": 5,
+            "sample_id": 46
+        },
+        {
+            "staff_id": 3,
+            "sample_id": 47
+        },
+        {
+            "staff_id": 6,
+            "sample_id": 48
+        },
+        {
+            "staff_id": 5,
+            "sample_id": 49
+        },
+        {
+            "staff_id": 6,
+            "sample_id": 49
+        },
+        {
+            "staff_id": 1,
+            "sample_id": 50
+        },
+        {
+            "staff_id": 5,
+            "sample_id": 50
+        },
+        {
+            "staff_id": 6,
+            "sample_id": 51
+        },
+        {
+            "staff_id": 3,
+            "sample_id": 51
+        },
+        {
+            "staff_id": 4,
+            "sample_id": 52
+        },
+        {
+            "staff_id": 5,
+            "sample_id": 52
+        },
+        {
+            "staff_id": 7,
+            "sample_id": 53
+        },
+        {
+            "staff_id": 2,
+            "sample_id": 53
+        },
+        {
+            "staff_id": 5,
+            "sample_id": 54
+        },
+        {
+            "staff_id": 6,
+            "sample_id": 54
+        },
+        {
+            "staff_id": 1,
+            "sample_id": 55
+        },
+        {
+            "staff_id": 5,
+            "sample_id": 55
+        },
+        {
+            "staff_id": 3,
+            "sample_id": 55
+        },
+        {
+            "staff_id": 7,
+            "sample_id": 56
+        },
+        {
+            "staff_id": 6,
+            "sample_id": 56
+        },
+        {
+            "staff_id": 1,
+            "sample_id": 56
+        },
+        {
+            "staff_id": 4,
+            "sample_id": 57
+        },
+        {
+            "staff_id": 2,
+            "sample_id": 58
+        },
+        {
+            "staff_id": 3,
+            "sample_id": 58
+        },
+        {
+            "staff_id": 7,
+            "sample_id": 59
+        },
+        {
+            "staff_id": 1,
+            "sample_id": 59
+        },
+        {
+            "staff_id": 4,
+            "sample_id": 59
+        },
+        {
+            "staff_id": 4,
+            "sample_id": 60
+        },
+        {
+            "staff_id": 1,
+            "sample_id": 61
+        },
+        {
+            "staff_id": 3,
+            "sample_id": 61
+        },
+        {
+            "staff_id": 4,
+            "sample_id": 61
+        },
+        {
+            "staff_id": 1,
+            "sample_id": 62
+        },
+        {
+            "staff_id": 6,
+            "sample_id": 62
+        },
+        {
+            "staff_id": 3,
+            "sample_id": 62
+        },
+        {
+            "staff_id": 6,
+            "sample_id": 63
+        },
+        {
+            "staff_id": 1,
+            "sample_id": 63
+        },
+        {
+            "staff_id": 7,
+            "sample_id": 64
+        },
+        {
+            "staff_id": 2,
+            "sample_id": 64
+        },
+        {
+            "staff_id": 4,
+            "sample_id": 64
+        },
+        {
+            "staff_id": 1,
+            "sample_id": 65
+        },
+        {
+            "staff_id": 7,
+            "sample_id": 65
+        },
+        {
+            "staff_id": 1,
+            "sample_id": 66
+        },
+        {
+            "staff_id": 4,
+            "sample_id": 66
+        },
+        {
+            "staff_id": 5,
+            "sample_id": 67
+        },
+        {
+            "staff_id": 3,
+            "sample_id": 67
+        },
+        {
+            "staff_id": 6,
+            "sample_id": 67
+        },
+        {
+            "staff_id": 3,
+            "sample_id": 68
+        },
+        {
+            "staff_id": 2,
+            "sample_id": 69
+        },
+        {
+            "staff_id": 3,
+            "sample_id": 69
+        },
+        {
+            "staff_id": 1,
+            "sample_id": 70
+        },
+        {
+            "staff_id": 3,
+            "sample_id": 70
+        },
+        {
+            "staff_id": 2,
+            "sample_id": 71
+        },
+        {
+            "staff_id": 4,
+            "sample_id": 71
+        },
+        {
+            "staff_id": 7,
+            "sample_id": 72
+        },
+        {
+            "staff_id": 5,
+            "sample_id": 73
+        },
+        {
+            "staff_id": 1,
+            "sample_id": 73
+        },
+        {
+            "staff_id": 6,
+            "sample_id": 73
+        },
+        {
+            "staff_id": 1,
+            "sample_id": 74
+        },
+        {
+            "staff_id": 3,
+            "sample_id": 75
+        },
+        {
+            "staff_id": 1,
+            "sample_id": 75
+        },
+        {
+            "staff_id": 7,
+            "sample_id": 76
+        },
+        {
+            "staff_id": 6,
+            "sample_id": 76
+        },
+        {
+            "staff_id": 4,
+            "sample_id": 77
+        },
+        {
+            "staff_id": 2,
+            "sample_id": 78
+        },
+        {
+            "staff_id": 6,
+            "sample_id": 78
+        },
+        {
+            "staff_id": 2,
+            "sample_id": 79
+        },
+        {
+            "staff_id": 7,
+            "sample_id": 79
+        },
+        {
+            "staff_id": 3,
+            "sample_id": 80
+        },
+        {
+            "staff_id": 1,
+            "sample_id": 80
+        },
+        {
+            "staff_id": 6,
+            "sample_id": 81
+        },
+        {
+            "staff_id": 3,
+            "sample_id": 81
+        },
+        {
+            "staff_id": 5,
+            "sample_id": 81
+        },
+        {
+            "staff_id": 4,
+            "sample_id": 82
+        },
+        {
+            "staff_id": 2,
+            "sample_id": 82
+        },
+        {
+            "staff_id": 5,
+            "sample_id": 82
+        },
+        {
+            "staff_id": 2,
+            "sample_id": 83
+        },
+        {
+            "staff_id": 2,
+            "sample_id": 84
+        },
+        {
+            "staff_id": 1,
+            "sample_id": 85
+        },
+        {
+            "staff_id": 2,
+            "sample_id": 85
+        },
+        {
+            "staff_id": 4,
+            "sample_id": 85
+        },
+        {
+            "staff_id": 3,
+            "sample_id": 86
+        },
+        {
+            "staff_id": 7,
+            "sample_id": 86
+        },
+        {
+            "staff_id": 7,
+            "sample_id": 87
+        },
+        {
+            "staff_id": 5,
+            "sample_id": 87
+        },
+        {
+            "staff_id": 7,
+            "sample_id": 88
+        },
+        {
+            "staff_id": 2,
+            "sample_id": 89
+        },
+        {
+            "staff_id": 6,
+            "sample_id": 89
+        },
+        {
+            "staff_id": 5,
+            "sample_id": 89
+        },
+        {
+            "staff_id": 1,
+            "sample_id": 90
+        },
+        {
+            "staff_id": 7,
+            "sample_id": 90
+        },
+        {
+            "staff_id": 2,
+            "sample_id": 90
+        },
+        {
+            "staff_id": 2,
+            "sample_id": 91
+        },
+        {
+            "staff_id": 1,
+            "sample_id": 91
+        },
+        {
+            "staff_id": 5,
+            "sample_id": 91
+        },
+        {
+            "staff_id": 5,
+            "sample_id": 92
+        },
+        {
+            "staff_id": 3,
+            "sample_id": 92
+        },
+        {
+            "staff_id": 1,
+            "sample_id": 93
+        },
+        {
+            "staff_id": 2,
+            "sample_id": 94
+        },
+        {
+            "staff_id": 1,
+            "sample_id": 94
+        },
+        {
+            "staff_id": 1,
+            "sample_id": 95
+        },
+        {
+            "staff_id": 7,
+            "sample_id": 96
+        },
+        {
+            "staff_id": 3,
+            "sample_id": 96
+        },
+        {
+            "staff_id": 1,
+            "sample_id": 96
+        },
+        {
+            "staff_id": 3,
+            "sample_id": 97
+        },
+        {
+            "staff_id": 1,
+            "sample_id": 97
+        },
+        {
+            "staff_id": 3,
+            "sample_id": 98
+        },
+        {
+            "staff_id": 1,
+            "sample_id": 98
+        },
+        {
+            "staff_id": 7,
+            "sample_id": 99
+        },
+        {
+            "staff_id": 4,
+            "sample_id": 99
+        },
+        {
+            "staff_id": 5,
+            "sample_id": 100
+        },
+        {
+            "staff_id": 7,
+            "sample_id": 100
+        },
+        {
+            "staff_id": 4,
+            "sample_id": 100
+        }
+    ],
+    "plate": [
+        {
+            "plate_id": 1,
+            "sample_id": 1,
+            "date": "2023-11-06",
+            "filename": "00ddeeef.csv"
+        },
+        {
+            "plate_id": 2,
+            "sample_id": 1,
+            "date": "2023-11-08",
+            "filename": "05cda4a1.csv"
+        },
+        {
+            "plate_id": 3,
+            "sample_id": 1,
+            "date": "2023-11-04",
+            "filename": "6bacedbd.csv"
+        },
+        {
+            "plate_id": 4,
+            "sample_id": 1,
+            "date": "2023-11-04",
+            "filename": "fd63dab1.csv"
+        },
+        {
+            "plate_id": 5,
+            "sample_id": 1,
+            "date": "2023-11-05",
+            "filename": "63a479a1.csv"
+        },
+        {
+            "plate_id": 6,
+            "sample_id": 1,
+            "date": "2023-11-05",
+            "filename": "be9dfe87.csv"
+        },
+        {
+            "plate_id": 7,
+            "sample_id": 1,
+            "date": "2023-11-07",
+            "filename": "6d47dd46.csv"
+        },
+        {
+            "plate_id": 8,
+            "sample_id": 1,
+            "date": "2023-11-09",
+            "filename": "d4abc6a9.csv"
+        },
+        {
+            "plate_id": 9,
+            "sample_id": 2,
+            "date": "2023-11-02",
+            "filename": "faaae9e4.csv"
+        },
+        {
+            "plate_id": 10,
+            "sample_id": 2,
+            "date": "2023-11-03",
+            "filename": "6efb37de.csv"
+        },
+        {
+            "plate_id": 11,
+            "sample_id": 2,
+            "date": "2023-11-09",
+            "filename": "0cfce73a.csv"
+        },
+        {
+            "plate_id": 12,
+            "sample_id": 3,
+            "date": "2023-11-08",
+            "filename": "c52dd9fa.csv"
+        },
+        {
+            "plate_id": 13,
+            "sample_id": 4,
+            "date": "2023-11-09",
+            "filename": "adbf4e91.csv"
+        },
+        {
+            "plate_id": 14,
+            "sample_id": 4,
+            "date": "2023-11-08",
+            "filename": "42f5fb51.csv"
+        },
+        {
+            "plate_id": 15,
+            "sample_id": 4,
+            "date": "2023-11-07",
+            "filename": "feadfddd.csv"
+        },
+        {
+            "plate_id": 16,
+            "sample_id": 4,
+            "date": "2023-11-07",
+            "filename": "ea6bc6d1.csv"
+        },
+        {
+            "plate_id": 17,
+            "sample_id": 5,
+            "date": "2023-11-04",
+            "filename": "0ee7c0ba.csv"
+        },
+        {
+            "plate_id": 18,
+            "sample_id": 5,
+            "date": "2023-11-05",
+            "filename": "6fc52c54.csv"
+        },
+        {
+            "plate_id": 19,
+            "sample_id": 5,
+            "date": "2023-11-04",
+            "filename": "3cad33d9.csv"
+        },
+        {
+            "plate_id": 20,
+            "sample_id": 5,
+            "date": "2023-11-09",
+            "filename": "6bdbd87a.csv"
+        },
+        {
+            "plate_id": 21,
+            "sample_id": 5,
+            "date": "2023-11-05",
+            "filename": "cab4abd4.csv"
+        },
+        {
+            "plate_id": 22,
+            "sample_id": 5,
+            "date": "2023-11-04",
+            "filename": "f9e1d805.csv"
+        },
+        {
+            "plate_id": 23,
+            "sample_id": 6,
+            "date": "2023-11-08",
+            "filename": "b7cfce14.csv"
+        },
+        {
+            "plate_id": 24,
+            "sample_id": 6,
+            "date": "2023-11-09",
+            "filename": "3ba56c96.csv"
+        },
+        {
+            "plate_id": 25,
+            "sample_id": 6,
+            "date": "2023-11-08",
+            "filename": "4a2b7dd1.csv"
+        },
+        {
+            "plate_id": 26,
+            "sample_id": 6,
+            "date": "2023-11-07",
+            "filename": "41c6bfee.csv"
+        },
+        {
+            "plate_id": 27,
+            "sample_id": 6,
+            "date": "2023-11-08",
+            "filename": "6445cb89.csv"
+        },
+        {
+            "plate_id": 28,
+            "sample_id": 6,
+            "date": "2023-11-09",
+            "filename": "e3b2c55b.csv"
+        },
+        {
+            "plate_id": 29,
+            "sample_id": 6,
+            "date": "2023-11-09",
+            "filename": "aeeadabe.csv"
+        },
+        {
+            "plate_id": 30,
+            "sample_id": 6,
+            "date": "2023-11-08",
+            "filename": "afd6ffcb.csv"
+        },
+        {
+            "plate_id": 31,
+            "sample_id": 7,
+            "date": "2023-11-08",
+            "filename": "ccdd5caf.csv"
+        },
+        {
+            "plate_id": 32,
+            "sample_id": 7,
+            "date": "2023-11-06",
+            "filename": "23e092dd.csv"
+        },
+        {
+            "plate_id": 33,
+            "sample_id": 7,
+            "date": "2023-11-09",
+            "filename": "fbfeaa7b.csv"
+        },
+        {
+            "plate_id": 34,
+            "sample_id": 7,
+            "date": "2023-11-05",
+            "filename": "1abedab6.csv"
+        },
+        {
+            "plate_id": 35,
+            "sample_id": 7,
+            "date": "2023-11-08",
+            "filename": "f39de9dc.csv"
+        },
+        {
+            "plate_id": 36,
+            "sample_id": 7,
+            "date": "2023-11-06",
+            "filename": "ab173f3b.csv"
+        },
+        {
+            "plate_id": 37,
+            "sample_id": 7,
+            "date": "2023-11-06",
+            "filename": "d9a693eb.csv"
+        },
+        {
+            "plate_id": 38,
+            "sample_id": 8,
+            "date": "2023-11-07",
+            "filename": "1b9d83ec.csv"
+        },
+        {
+            "plate_id": 39,
+            "sample_id": 8,
+            "date": "2023-11-09",
+            "filename": "ad19036b.csv"
+        },
+        {
+            "plate_id": 40,
+            "sample_id": 8,
+            "date": "2023-11-09",
+            "filename": "60f537b9.csv"
+        },
+        {
+            "plate_id": 41,
+            "sample_id": 8,
+            "date": "2023-11-07",
+            "filename": "62a57186.csv"
+        },
+        {
+            "plate_id": 42,
+            "sample_id": 8,
+            "date": "2023-11-08",
+            "filename": "ac9cf34b.csv"
+        },
+        {
+            "plate_id": 43,
+            "sample_id": 9,
+            "date": "2023-11-05",
+            "filename": "3b0cada7.csv"
+        },
+        {
+            "plate_id": 44,
+            "sample_id": 9,
+            "date": "2023-11-08",
+            "filename": "e5506ffb.csv"
+        },
+        {
+            "plate_id": 45,
+            "sample_id": 9,
+            "date": "2023-11-05",
+            "filename": "8a8ac7ee.csv"
+        },
+        {
+            "plate_id": 46,
+            "sample_id": 9,
+            "date": "2023-11-07",
+            "filename": "0fba1c13.csv"
+        },
+        {
+            "plate_id": 47,
+            "sample_id": 9,
+            "date": "2023-11-07",
+            "filename": "fd168dfc.csv"
+        },
+        {
+            "plate_id": 48,
+            "sample_id": 9,
+            "date": "2023-11-06",
+            "filename": "6addcdea.csv"
+        },
+        {
+            "plate_id": 49,
+            "sample_id": 9,
+            "date": "2023-11-08",
+            "filename": "d0e91048.csv"
+        },
+        {
+            "plate_id": 50,
+            "sample_id": 10,
+            "date": "2023-11-07",
+            "filename": "11f5dcff.csv"
+        },
+        {
+            "plate_id": 51,
+            "sample_id": 10,
+            "date": "2023-11-04",
+            "filename": "f3f1aea6.csv"
+        },
+        {
+            "plate_id": 52,
+            "sample_id": 11,
+            "date": "2023-11-07",
+            "filename": "bc311ebd.csv"
+        },
+        {
+            "plate_id": 53,
+            "sample_id": 11,
+            "date": "2023-11-07",
+            "filename": "c9dae9db.csv"
+        },
+        {
+            "plate_id": 54,
+            "sample_id": 11,
+            "date": "2023-11-09",
+            "filename": "6edc3cf9.csv"
+        },
+        {
+            "plate_id": 55,
+            "sample_id": 11,
+            "date": "2023-11-08",
+            "filename": "b15783c0.csv"
+        },
+        {
+            "plate_id": 56,
+            "sample_id": 12,
+            "date": "2023-11-08",
+            "filename": "a62feae0.csv"
+        },
+        {
+            "plate_id": 57,
+            "sample_id": 12,
+            "date": "2023-11-09",
+            "filename": "bcbf98ed.csv"
+        },
+        {
+            "plate_id": 58,
+            "sample_id": 14,
+            "date": "2023-11-08",
+            "filename": "cebee5ff.csv"
+        },
+        {
+            "plate_id": 59,
+            "sample_id": 14,
+            "date": "2023-11-08",
+            "filename": "4ce2606c.csv"
+        },
+        {
+            "plate_id": 60,
+            "sample_id": 15,
+            "date": "2023-11-08",
+            "filename": "dbcfd519.csv"
+        },
+        {
+            "plate_id": 61,
+            "sample_id": 16,
+            "date": "2023-11-08",
+            "filename": "cd63cc51.csv"
+        },
+        {
+            "plate_id": 62,
+            "sample_id": 16,
+            "date": "2023-11-09",
+            "filename": "f0969e13.csv"
+        },
+        {
+            "plate_id": 63,
+            "sample_id": 16,
+            "date": "2023-11-04",
+            "filename": "2fc3d8cf.csv"
+        },
+        {
+            "plate_id": 64,
+            "sample_id": 16,
+            "date": "2023-11-06",
+            "filename": "1cb2ca8f.csv"
+        },
+        {
+            "plate_id": 65,
+            "sample_id": 16,
+            "date": "2023-11-06",
+            "filename": "af4d5fd7.csv"
+        },
+        {
+            "plate_id": 66,
+            "sample_id": 16,
+            "date": "2023-11-05",
+            "filename": "ea21c1c2.csv"
+        },
+        {
+            "plate_id": 67,
+            "sample_id": 16,
+            "date": "2023-11-09",
+            "filename": "bdbaacbb.csv"
+        },
+        {
+            "plate_id": 68,
+            "sample_id": 17,
+            "date": "2023-11-08",
+            "filename": "ea1dcd94.csv"
+        },
+        {
+            "plate_id": 69,
+            "sample_id": 17,
+            "date": "2023-11-09",
+            "filename": "f571a7b5.csv"
+        },
+        {
+            "plate_id": 70,
+            "sample_id": 17,
+            "date": "2023-11-08",
+            "filename": "f1051120.csv"
+        },
+        {
+            "plate_id": 71,
+            "sample_id": 18,
+            "date": "2023-11-06",
+            "filename": "8203abec.csv"
+        },
+        {
+            "plate_id": 72,
+            "sample_id": 18,
+            "date": "2023-11-07",
+            "filename": "b4aacef2.csv"
+        },
+        {
+            "plate_id": 73,
+            "sample_id": 19,
+            "date": "2023-11-07",
+            "filename": "c8abc2d0.csv"
+        },
+        {
+            "plate_id": 74,
+            "sample_id": 19,
+            "date": "2023-11-07",
+            "filename": "d087cbe2.csv"
+        },
+        {
+            "plate_id": 75,
+            "sample_id": 19,
+            "date": "2023-11-09",
+            "filename": "4a657d87.csv"
+        },
+        {
+            "plate_id": 76,
+            "sample_id": 20,
+            "date": "2023-11-07",
+            "filename": "cbbc5a4f.csv"
+        },
+        {
+            "plate_id": 77,
+            "sample_id": 21,
+            "date": "2023-11-08",
+            "filename": "a3efad60.csv"
+        },
+        {
+            "plate_id": 78,
+            "sample_id": 21,
+            "date": "2023-11-06",
+            "filename": "bfae9abc.csv"
+        },
+        {
+            "plate_id": 79,
+            "sample_id": 21,
+            "date": "2023-11-06",
+            "filename": "83cfaaed.csv"
+        },
+        {
+            "plate_id": 80,
+            "sample_id": 21,
+            "date": "2023-11-04",
+            "filename": "a30f0fca.csv"
+        },
+        {
+            "plate_id": 81,
+            "sample_id": 23,
+            "date": "2023-11-09",
+            "filename": "bcb5c4db.csv"
+        },
+        {
+            "plate_id": 82,
+            "sample_id": 25,
+            "date": "2023-11-05",
+            "filename": "b2f7dd6c.csv"
+        },
+        {
+            "plate_id": 83,
+            "sample_id": 25,
+            "date": "2023-11-09",
+            "filename": "fed3f8c3.csv"
+        },
+        {
+            "plate_id": 84,
+            "sample_id": 25,
+            "date": "2023-11-05",
+            "filename": "a9bcab13.csv"
+        },
+        {
+            "plate_id": 85,
+            "sample_id": 25,
+            "date": "2023-11-06",
+            "filename": "033b27ec.csv"
+        },
+        {
+            "plate_id": 86,
+            "sample_id": 25,
+            "date": "2023-11-04",
+            "filename": "30a34c92.csv"
+        },
+        {
+            "plate_id": 87,
+            "sample_id": 25,
+            "date": "2023-11-05",
+            "filename": "9f1b178f.csv"
+        },
+        {
+            "plate_id": 88,
+            "sample_id": 25,
+            "date": "2023-11-08",
+            "filename": "b03dae1b.csv"
+        },
+        {
+            "plate_id": 89,
+            "sample_id": 26,
+            "date": "2023-11-07",
+            "filename": "cf705c2c.csv"
+        },
+        {
+            "plate_id": 90,
+            "sample_id": 26,
+            "date": "2023-11-03",
+            "filename": "1c75d024.csv"
+        },
+        {
+            "plate_id": 91,
+            "sample_id": 26,
+            "date": "2023-11-09",
+            "filename": "0d8bd43d.csv"
+        },
+        {
+            "plate_id": 92,
+            "sample_id": 26,
+            "date": "2023-11-04",
+            "filename": "42e1d41e.csv"
+        },
+        {
+            "plate_id": 93,
+            "sample_id": 27,
+            "date": "2023-11-06",
+            "filename": "adeafb59.csv"
+        },
+        {
+            "plate_id": 94,
+            "sample_id": 27,
+            "date": "2023-11-09",
+            "filename": "6edfa9ae.csv"
+        },
+        {
+            "plate_id": 95,
+            "sample_id": 27,
+            "date": "2023-11-05",
+            "filename": "5a3f40e7.csv"
+        },
+        {
+            "plate_id": 96,
+            "sample_id": 27,
+            "date": "2023-11-06",
+            "filename": "9df2cf30.csv"
+        },
+        {
+            "plate_id": 97,
+            "sample_id": 27,
+            "date": "2023-11-06",
+            "filename": "b594c0ab.csv"
+        },
+        {
+            "plate_id": 98,
+            "sample_id": 27,
+            "date": "2023-11-05",
+            "filename": "a9e91a08.csv"
+        },
+        {
+            "plate_id": 99,
+            "sample_id": 27,
+            "date": "2023-11-05",
+            "filename": "d3a4823a.csv"
+        },
+        {
+            "plate_id": 100,
+            "sample_id": 28,
+            "date": "2023-11-08",
+            "filename": "4dcdfc25.csv"
+        },
+        {
+            "plate_id": 101,
+            "sample_id": 28,
+            "date": "2023-11-09",
+            "filename": "eef9deaf.csv"
+        },
+        {
+            "plate_id": 102,
+            "sample_id": 28,
+            "date": "2023-11-09",
+            "filename": "a5bd5b6c.csv"
+        },
+        {
+            "plate_id": 103,
+            "sample_id": 28,
+            "date": "2023-11-07",
+            "filename": "004be41c.csv"
+        },
+        {
+            "plate_id": 104,
+            "sample_id": 28,
+            "date": "2023-11-07",
+            "filename": "d96dbdba.csv"
+        },
+        {
+            "plate_id": 105,
+            "sample_id": 29,
+            "date": "2023-11-04",
+            "filename": "8dfabadf.csv"
+        },
+        {
+            "plate_id": 106,
+            "sample_id": 29,
+            "date": "2023-11-06",
+            "filename": "efb70a2e.csv"
+        },
+        {
+            "plate_id": 107,
+            "sample_id": 29,
+            "date": "2023-11-05",
+            "filename": "9a583e20.csv"
+        },
+        {
+            "plate_id": 108,
+            "sample_id": 29,
+            "date": "2023-11-06",
+            "filename": "a0ead992.csv"
+        },
+        {
+            "plate_id": 109,
+            "sample_id": 29,
+            "date": "2023-11-06",
+            "filename": "d2600f23.csv"
+        },
+        {
+            "plate_id": 110,
+            "sample_id": 30,
+            "date": "2023-11-09",
+            "filename": "6a3efb2e.csv"
+        },
+        {
+            "plate_id": 111,
+            "sample_id": 30,
+            "date": "2023-11-09",
+            "filename": "40d47ecf.csv"
+        },
+        {
+            "plate_id": 112,
+            "sample_id": 30,
+            "date": "2023-11-09",
+            "filename": "4a92ae7a.csv"
+        },
+        {
+            "plate_id": 113,
+            "sample_id": 30,
+            "date": "2023-11-09",
+            "filename": "ed96be1b.csv"
+        },
+        {
+            "plate_id": 114,
+            "sample_id": 30,
+            "date": "2023-11-09",
+            "filename": "dcd9ba66.csv"
+        },
+        {
+            "plate_id": 115,
+            "sample_id": 30,
+            "date": "2023-11-09",
+            "filename": "d2ca4ac6.csv"
+        },
+        {
+            "plate_id": 116,
+            "sample_id": 30,
+            "date": "2023-11-09",
+            "filename": "6fb8f6ce.csv"
+        },
+        {
+            "plate_id": 117,
+            "sample_id": 30,
+            "date": "2023-11-09",
+            "filename": "cbbc17d8.csv"
+        },
+        {
+            "plate_id": 118,
+            "sample_id": 31,
+            "date": "2023-11-04",
+            "filename": "e5cbaae1.csv"
+        },
+        {
+            "plate_id": 119,
+            "sample_id": 31,
+            "date": "2023-11-05",
+            "filename": "4f93eb8a.csv"
+        },
+        {
+            "plate_id": 120,
+            "sample_id": 32,
+            "date": "2023-11-09",
+            "filename": "69cf06ba.csv"
+        },
+        {
+            "plate_id": 121,
+            "sample_id": 32,
+            "date": "2023-11-08",
+            "filename": "bfbcd53d.csv"
+        },
+        {
+            "plate_id": 122,
+            "sample_id": 32,
+            "date": "2023-11-08",
+            "filename": "3567fc0c.csv"
+        },
+        {
+            "plate_id": 123,
+            "sample_id": 32,
+            "date": "2023-11-04",
+            "filename": "d73b4ead.csv"
+        },
+        {
+            "plate_id": 124,
+            "sample_id": 32,
+            "date": "2023-11-09",
+            "filename": "f2b7fca9.csv"
+        },
+        {
+            "plate_id": 125,
+            "sample_id": 32,
+            "date": "2023-11-08",
+            "filename": "fdfc9dec.csv"
+        },
+        {
+            "plate_id": 126,
+            "sample_id": 32,
+            "date": "2023-11-04",
+            "filename": "06eae3a3.csv"
+        },
+        {
+            "plate_id": 127,
+            "sample_id": 32,
+            "date": "2023-11-09",
+            "filename": "c9b93d28.csv"
+        },
+        {
+            "plate_id": 128,
+            "sample_id": 33,
+            "date": "2023-11-08",
+            "filename": "ffabde29.csv"
+        },
+        {
+            "plate_id": 129,
+            "sample_id": 33,
+            "date": "2023-11-06",
+            "filename": "18daafce.csv"
+        },
+        {
+            "plate_id": 130,
+            "sample_id": 34,
+            "date": "2023-11-05",
+            "filename": "8bfdd9d2.csv"
+        },
+        {
+            "plate_id": 131,
+            "sample_id": 34,
+            "date": "2023-11-08",
+            "filename": "cadafd4a.csv"
+        },
+        {
+            "plate_id": 132,
+            "sample_id": 34,
+            "date": "2023-11-07",
+            "filename": "c30febb6.csv"
+        },
+        {
+            "plate_id": 133,
+            "sample_id": 35,
+            "date": "2023-11-06",
+            "filename": "0c0d3a81.csv"
+        },
+        {
+            "plate_id": 134,
+            "sample_id": 35,
+            "date": "2023-11-03",
+            "filename": "36afeaa6.csv"
+        },
+        {
+            "plate_id": 135,
+            "sample_id": 35,
+            "date": "2023-11-05",
+            "filename": "dfbdaaf3.csv"
+        },
+        {
+            "plate_id": 136,
+            "sample_id": 35,
+            "date": "2023-11-04",
+            "filename": "6ecec010.csv"
+        },
+        {
+            "plate_id": 137,
+            "sample_id": 35,
+            "date": "2023-11-08",
+            "filename": "d4b3ed1c.csv"
+        },
+        {
+            "plate_id": 138,
+            "sample_id": 35,
+            "date": "2023-11-06",
+            "filename": "c794feb7.csv"
+        },
+        {
+            "plate_id": 139,
+            "sample_id": 36,
+            "date": "2023-11-05",
+            "filename": "fd56b593.csv"
+        },
+        {
+            "plate_id": 140,
+            "sample_id": 36,
+            "date": "2023-11-08",
+            "filename": "7cff0dfa.csv"
+        },
+        {
+            "plate_id": 141,
+            "sample_id": 36,
+            "date": "2023-11-05",
+            "filename": "4cccba2f.csv"
+        },
+        {
+            "plate_id": 142,
+            "sample_id": 36,
+            "date": "2023-11-08",
+            "filename": "9afc7f3c.csv"
+        },
+        {
+            "plate_id": 143,
+            "sample_id": 37,
+            "date": "2023-11-07",
+            "filename": "d9e7d9bb.csv"
+        },
+        {
+            "plate_id": 144,
+            "sample_id": 37,
+            "date": "2023-11-07",
+            "filename": "7a79d080.csv"
+        },
+        {
+            "plate_id": 145,
+            "sample_id": 38,
+            "date": "2023-11-05",
+            "filename": "6efabdbc.csv"
+        },
+        {
+            "plate_id": 146,
+            "sample_id": 38,
+            "date": "2023-11-07",
+            "filename": "5396d7b5.csv"
+        },
+        {
+            "plate_id": 147,
+            "sample_id": 38,
+            "date": "2023-11-04",
+            "filename": "29e1f33e.csv"
+        },
+        {
+            "plate_id": 148,
+            "sample_id": 38,
+            "date": "2023-11-05",
+            "filename": "c9f62732.csv"
+        },
+        {
+            "plate_id": 149,
+            "sample_id": 38,
+            "date": "2023-11-04",
+            "filename": "4ff3ef5d.csv"
+        },
+        {
+            "plate_id": 150,
+            "sample_id": 39,
+            "date": "2023-11-07",
+            "filename": "be4acc4c.csv"
+        },
+        {
+            "plate_id": 151,
+            "sample_id": 39,
+            "date": "2023-11-08",
+            "filename": "e6402a9e.csv"
+        },
+        {
+            "plate_id": 152,
+            "sample_id": 39,
+            "date": "2023-11-07",
+            "filename": "1ca6bdb9.csv"
+        },
+        {
+            "plate_id": 153,
+            "sample_id": 39,
+            "date": "2023-11-07",
+            "filename": "fcab3d2e.csv"
+        },
+        {
+            "plate_id": 154,
+            "sample_id": 40,
+            "date": "2023-11-07",
+            "filename": "da0f3a1e.csv"
+        },
+        {
+            "plate_id": 155,
+            "sample_id": 42,
+            "date": "2023-11-05",
+            "filename": "22aedcec.csv"
+        },
+        {
+            "plate_id": 156,
+            "sample_id": 42,
+            "date": "2023-11-08",
+            "filename": "8b483750.csv"
+        },
+        {
+            "plate_id": 157,
+            "sample_id": 42,
+            "date": "2023-11-08",
+            "filename": "fa77af8a.csv"
+        },
+        {
+            "plate_id": 158,
+            "sample_id": 42,
+            "date": "2023-11-07",
+            "filename": "ecf8e086.csv"
+        },
+        {
+            "plate_id": 159,
+            "sample_id": 43,
+            "date": "2023-11-09",
+            "filename": "c46c4328.csv"
+        },
+        {
+            "plate_id": 160,
+            "sample_id": 43,
+            "date": "2023-11-08",
+            "filename": "b4fadbcf.csv"
+        },
+        {
+            "plate_id": 161,
+            "sample_id": 43,
+            "date": "2023-11-07",
+            "filename": "9ab2cb2b.csv"
+        },
+        {
+            "plate_id": 162,
+            "sample_id": 43,
+            "date": "2023-11-08",
+            "filename": "1c18afbf.csv"
+        },
+        {
+            "plate_id": 163,
+            "sample_id": 43,
+            "date": "2023-11-07",
+            "filename": "6fd8179e.csv"
+        },
+        {
+            "plate_id": 164,
+            "sample_id": 43,
+            "date": "2023-11-09",
+            "filename": "a77fa1b7.csv"
+        },
+        {
+            "plate_id": 165,
+            "sample_id": 43,
+            "date": "2023-11-08",
+            "filename": "ffbbcbed.csv"
+        },
+        {
+            "plate_id": 166,
+            "sample_id": 44,
+            "date": "2023-11-09",
+            "filename": "7e86add7.csv"
+        },
+        {
+            "plate_id": 167,
+            "sample_id": 44,
+            "date": "2023-11-08",
+            "filename": "0e256f5d.csv"
+        },
+        {
+            "plate_id": 168,
+            "sample_id": 44,
+            "date": "2023-11-08",
+            "filename": "05cdde66.csv"
+        },
+        {
+            "plate_id": 169,
+            "sample_id": 44,
+            "date": "2023-11-07",
+            "filename": "77d0e5b1.csv"
+        },
+        {
+            "plate_id": 170,
+            "sample_id": 44,
+            "date": "2023-11-07",
+            "filename": "e1fc9d2d.csv"
+        },
+        {
+            "plate_id": 171,
+            "sample_id": 44,
+            "date": "2023-11-07",
+            "filename": "ccfa276b.csv"
+        },
+        {
+            "plate_id": 172,
+            "sample_id": 45,
+            "date": "2023-11-03",
+            "filename": "b71484db.csv"
+        },
+        {
+            "plate_id": 173,
+            "sample_id": 45,
+            "date": "2023-11-08",
+            "filename": "cfab3bdb.csv"
+        },
+        {
+            "plate_id": 174,
+            "sample_id": 45,
+            "date": "2023-11-08",
+            "filename": "acbcd80c.csv"
+        },
+        {
+            "plate_id": 175,
+            "sample_id": 45,
+            "date": "2023-11-04",
+            "filename": "1d8c64de.csv"
+        },
+        {
+            "plate_id": 176,
+            "sample_id": 45,
+            "date": "2023-11-04",
+            "filename": "d5d2a332.csv"
+        },
+        {
+            "plate_id": 177,
+            "sample_id": 45,
+            "date": "2023-11-09",
+            "filename": "3e18a8ce.csv"
+        },
+        {
+            "plate_id": 178,
+            "sample_id": 45,
+            "date": "2023-11-08",
+            "filename": "3faefa9e.csv"
+        },
+        {
+            "plate_id": 179,
+            "sample_id": 45,
+            "date": "2023-11-09",
+            "filename": "cff67f4a.csv"
+        },
+        {
+            "plate_id": 180,
+            "sample_id": 46,
+            "date": "2023-11-06",
+            "filename": "d56fd6d1.csv"
+        },
+        {
+            "plate_id": 181,
+            "sample_id": 46,
+            "date": "2023-11-08",
+            "filename": "4de4fcc8.csv"
+        },
+        {
+            "plate_id": 182,
+            "sample_id": 46,
+            "date": "2023-11-08",
+            "filename": "1c4cb8e2.csv"
+        },
+        {
+            "plate_id": 183,
+            "sample_id": 46,
+            "date": "2023-11-04",
+            "filename": "ff1aabee.csv"
+        },
+        {
+            "plate_id": 184,
+            "sample_id": 46,
+            "date": "2023-11-08",
+            "filename": "1a64031b.csv"
+        },
+        {
+            "plate_id": 185,
+            "sample_id": 47,
+            "date": "2023-11-09",
+            "filename": "129fff67.csv"
+        },
+        {
+            "plate_id": 186,
+            "sample_id": 47,
+            "date": "2023-11-08",
+            "filename": "de33787e.csv"
+        },
+        {
+            "plate_id": 187,
+            "sample_id": 47,
+            "date": "2023-11-08",
+            "filename": "c2ea9519.csv"
+        },
+        {
+            "plate_id": 188,
+            "sample_id": 47,
+            "date": "2023-11-06",
+            "filename": "18cc98a8.csv"
+        },
+        {
+            "plate_id": 189,
+            "sample_id": 47,
+            "date": "2023-11-06",
+            "filename": "bdc8221a.csv"
+        },
+        {
+            "plate_id": 190,
+            "sample_id": 48,
+            "date": "2023-11-04",
+            "filename": "846fddbb.csv"
+        },
+        {
+            "plate_id": 191,
+            "sample_id": 48,
+            "date": "2023-11-05",
+            "filename": "eadb9fcd.csv"
+        },
+        {
+            "plate_id": 192,
+            "sample_id": 48,
+            "date": "2023-11-09",
+            "filename": "c406866e.csv"
+        },
+        {
+            "plate_id": 193,
+            "sample_id": 49,
+            "date": "2023-11-08",
+            "filename": "9be60d5f.csv"
+        },
+        {
+            "plate_id": 194,
+            "sample_id": 49,
+            "date": "2023-11-05",
+            "filename": "79ae8ef6.csv"
+        },
+        {
+            "plate_id": 195,
+            "sample_id": 49,
+            "date": "2023-11-08",
+            "filename": "0b5b47dd.csv"
+        },
+        {
+            "plate_id": 196,
+            "sample_id": 49,
+            "date": "2023-11-05",
+            "filename": "61e45945.csv"
+        },
+        {
+            "plate_id": 197,
+            "sample_id": 49,
+            "date": "2023-11-07",
+            "filename": "f77d44d4.csv"
+        },
+        {
+            "plate_id": 198,
+            "sample_id": 50,
+            "date": "2023-11-09",
+            "filename": "dca58dd9.csv"
+        },
+        {
+            "plate_id": 199,
+            "sample_id": 50,
+            "date": "2023-11-05",
+            "filename": "dedcbd28.csv"
+        },
+        {
+            "plate_id": 200,
+            "sample_id": 50,
+            "date": "2023-11-04",
+            "filename": "2deeecc5.csv"
+        },
+        {
+            "plate_id": 201,
+            "sample_id": 50,
+            "date": "2023-11-05",
+            "filename": "5f356fe4.csv"
+        },
+        {
+            "plate_id": 202,
+            "sample_id": 50,
+            "date": "2023-11-09",
+            "filename": "5b9db89b.csv"
+        },
+        {
+            "plate_id": 203,
+            "sample_id": 50,
+            "date": "2023-11-05",
+            "filename": "fdf85f1a.csv"
+        },
+        {
+            "plate_id": 204,
+            "sample_id": 50,
+            "date": "2023-11-07",
+            "filename": "30aeaa1c.csv"
+        },
+        {
+            "plate_id": 205,
+            "sample_id": 50,
+            "date": "2023-11-09",
+            "filename": "120dd207.csv"
+        },
+        {
+            "plate_id": 206,
+            "sample_id": 51,
+            "date": "2023-11-05",
+            "filename": "fdcabbb6.csv"
+        },
+        {
+            "plate_id": 207,
+            "sample_id": 51,
+            "date": "2023-11-09",
+            "filename": "0edd8b0b.csv"
+        },
+        {
+            "plate_id": 208,
+            "sample_id": 52,
+            "date": "2023-11-05",
+            "filename": "baecb3c0.csv"
+        },
+        {
+            "plate_id": 209,
+            "sample_id": 52,
+            "date": "2023-11-04",
+            "filename": "daef0cef.csv"
+        },
+        {
+            "plate_id": 210,
+            "sample_id": 52,
+            "date": "2023-11-01",
+            "filename": "8f389a0a.csv"
+        },
+        {
+            "plate_id": 211,
+            "sample_id": 52,
+            "date": "2023-11-07",
+            "filename": "c5afd8ea.csv"
+        },
+        {
+            "plate_id": 212,
+            "sample_id": 52,
+            "date": "2023-11-08",
+            "filename": "a19972b0.csv"
+        },
+        {
+            "plate_id": 213,
+            "sample_id": 52,
+            "date": "2023-11-09",
+            "filename": "fcfa5df0.csv"
+        },
+        {
+            "plate_id": 214,
+            "sample_id": 53,
+            "date": "2023-11-09",
+            "filename": "ea4555d4.csv"
+        },
+        {
+            "plate_id": 215,
+            "sample_id": 54,
+            "date": "2023-11-05",
+            "filename": "35e6f8ed.csv"
+        },
+        {
+            "plate_id": 216,
+            "sample_id": 54,
+            "date": "2023-11-07",
+            "filename": "adf785ce.csv"
+        },
+        {
+            "plate_id": 217,
+            "sample_id": 54,
+            "date": "2023-11-01",
+            "filename": "f8a66a69.csv"
+        },
+        {
+            "plate_id": 218,
+            "sample_id": 54,
+            "date": "2023-11-04",
+            "filename": "42f766df.csv"
+        },
+        {
+            "plate_id": 219,
+            "sample_id": 54,
+            "date": "2023-11-04",
+            "filename": "a98e20ff.csv"
+        },
+        {
+            "plate_id": 220,
+            "sample_id": 54,
+            "date": "2023-11-06",
+            "filename": "7ab132ff.csv"
+        },
+        {
+            "plate_id": 221,
+            "sample_id": 55,
+            "date": "2023-11-09",
+            "filename": "2e4b07e8.csv"
+        },
+        {
+            "plate_id": 222,
+            "sample_id": 55,
+            "date": "2023-11-06",
+            "filename": "ec3beee4.csv"
+        },
+        {
+            "plate_id": 223,
+            "sample_id": 56,
+            "date": "2023-11-07",
+            "filename": "69dc5cdc.csv"
+        },
+        {
+            "plate_id": 224,
+            "sample_id": 56,
+            "date": "2023-11-07",
+            "filename": "bf2ad9e2.csv"
+        },
+        {
+            "plate_id": 225,
+            "sample_id": 56,
+            "date": "2023-11-03",
+            "filename": "ecefaaca.csv"
+        },
+        {
+            "plate_id": 226,
+            "sample_id": 58,
+            "date": "2023-11-09",
+            "filename": "ccafb909.csv"
+        },
+        {
+            "plate_id": 227,
+            "sample_id": 58,
+            "date": "2023-11-09",
+            "filename": "983bbada.csv"
+        },
+        {
+            "plate_id": 228,
+            "sample_id": 58,
+            "date": "2023-11-07",
+            "filename": "ac4bf7dc.csv"
+        },
+        {
+            "plate_id": 229,
+            "sample_id": 58,
+            "date": "2023-11-08",
+            "filename": "e7fed0aa.csv"
+        },
+        {
+            "plate_id": 230,
+            "sample_id": 58,
+            "date": "2023-11-09",
+            "filename": "1bdb4dac.csv"
+        },
+        {
+            "plate_id": 231,
+            "sample_id": 58,
+            "date": "2023-11-07",
+            "filename": "be94e0ba.csv"
+        },
+        {
+            "plate_id": 232,
+            "sample_id": 58,
+            "date": "2023-11-08",
+            "filename": "8c3d4c85.csv"
+        },
+        {
+            "plate_id": 233,
+            "sample_id": 59,
+            "date": "2023-11-09",
+            "filename": "cbdaa557.csv"
+        },
+        {
+            "plate_id": 234,
+            "sample_id": 59,
+            "date": "2023-11-09",
+            "filename": "6c7d0beb.csv"
+        },
+        {
+            "plate_id": 235,
+            "sample_id": 59,
+            "date": "2023-11-09",
+            "filename": "d40a0944.csv"
+        },
+        {
+            "plate_id": 236,
+            "sample_id": 59,
+            "date": "2023-11-09",
+            "filename": "ba7fcefb.csv"
+        },
+        {
+            "plate_id": 237,
+            "sample_id": 60,
+            "date": "2023-11-09",
+            "filename": "ff9aa854.csv"
+        },
+        {
+            "plate_id": 238,
+            "sample_id": 61,
+            "date": "2023-11-09",
+            "filename": "2aa9b38e.csv"
+        },
+        {
+            "plate_id": 239,
+            "sample_id": 61,
+            "date": "2023-11-08",
+            "filename": "78e73d49.csv"
+        },
+        {
+            "plate_id": 240,
+            "sample_id": 61,
+            "date": "2023-11-08",
+            "filename": "efdf1eea.csv"
+        },
+        {
+            "plate_id": 241,
+            "sample_id": 61,
+            "date": "2023-11-08",
+            "filename": "ef5dffdb.csv"
+        },
+        {
+            "plate_id": 242,
+            "sample_id": 61,
+            "date": "2023-11-09",
+            "filename": "8ebea6fc.csv"
+        },
+        {
+            "plate_id": 243,
+            "sample_id": 62,
+            "date": "2023-11-09",
+            "filename": "d5c664df.csv"
+        },
+        {
+            "plate_id": 244,
+            "sample_id": 62,
+            "date": "2023-11-08",
+            "filename": "dcae2e0f.csv"
+        },
+        {
+            "plate_id": 245,
+            "sample_id": 62,
+            "date": "2023-11-08",
+            "filename": "877cbe04.csv"
+        },
+        {
+            "plate_id": 246,
+            "sample_id": 64,
+            "date": "2023-11-05",
+            "filename": "3caff9f7.csv"
+        },
+        {
+            "plate_id": 247,
+            "sample_id": 64,
+            "date": "2023-11-06",
+            "filename": "deda5cb7.csv"
+        },
+        {
+            "plate_id": 248,
+            "sample_id": 64,
+            "date": "2023-11-07",
+            "filename": "631cad3b.csv"
+        },
+        {
+            "plate_id": 249,
+            "sample_id": 64,
+            "date": "2023-11-07",
+            "filename": "ae26cc34.csv"
+        },
+        {
+            "plate_id": 250,
+            "sample_id": 64,
+            "date": "2023-11-09",
+            "filename": "bbe091c7.csv"
+        },
+        {
+            "plate_id": 251,
+            "sample_id": 64,
+            "date": "2023-11-08",
+            "filename": "f6cc5dbb.csv"
+        },
+        {
+            "plate_id": 252,
+            "sample_id": 64,
+            "date": "2023-11-05",
+            "filename": "9bc14f1c.csv"
+        },
+        {
+            "plate_id": 253,
+            "sample_id": 66,
+            "date": "2023-11-06",
+            "filename": "4daa6bc0.csv"
+        },
+        {
+            "plate_id": 254,
+            "sample_id": 66,
+            "date": "2023-11-09",
+            "filename": "7bc2b17d.csv"
+        },
+        {
+            "plate_id": 255,
+            "sample_id": 66,
+            "date": "2023-11-07",
+            "filename": "da9ddca1.csv"
+        },
+        {
+            "plate_id": 256,
+            "sample_id": 66,
+            "date": "2023-11-07",
+            "filename": "8ed11c1a.csv"
+        },
+        {
+            "plate_id": 257,
+            "sample_id": 66,
+            "date": "2023-11-07",
+            "filename": "033adc64.csv"
+        },
+        {
+            "plate_id": 258,
+            "sample_id": 67,
+            "date": "2023-11-05",
+            "filename": "c94e82d1.csv"
+        },
+        {
+            "plate_id": 259,
+            "sample_id": 67,
+            "date": "2023-11-03",
+            "filename": "b73f33e3.csv"
+        },
+        {
+            "plate_id": 260,
+            "sample_id": 67,
+            "date": "2023-11-02",
+            "filename": "f23099cf.csv"
+        },
+        {
+            "plate_id": 261,
+            "sample_id": 67,
+            "date": "2023-11-04",
+            "filename": "71d5edc1.csv"
+        },
+        {
+            "plate_id": 262,
+            "sample_id": 67,
+            "date": "2023-11-09",
+            "filename": "bac7b8fc.csv"
+        },
+        {
+            "plate_id": 263,
+            "sample_id": 67,
+            "date": "2023-11-04",
+            "filename": "5a81edcc.csv"
+        },
+        {
+            "plate_id": 264,
+            "sample_id": 67,
+            "date": "2023-11-03",
+            "filename": "e478d13a.csv"
+        },
+        {
+            "plate_id": 265,
+            "sample_id": 68,
+            "date": "2023-11-07",
+            "filename": "6cefb345.csv"
+        },
+        {
+            "plate_id": 266,
+            "sample_id": 68,
+            "date": "2023-11-08",
+            "filename": "18bccb4e.csv"
+        },
+        {
+            "plate_id": 267,
+            "sample_id": 68,
+            "date": "2023-11-09",
+            "filename": "8f7c86be.csv"
+        },
+        {
+            "plate_id": 268,
+            "sample_id": 68,
+            "date": "2023-11-07",
+            "filename": "c7de1962.csv"
+        },
+        {
+            "plate_id": 269,
+            "sample_id": 68,
+            "date": "2023-11-08",
+            "filename": "f2e3bcbf.csv"
+        },
+        {
+            "plate_id": 270,
+            "sample_id": 68,
+            "date": "2023-11-09",
+            "filename": "62539ca7.csv"
+        },
+        {
+            "plate_id": 271,
+            "sample_id": 69,
+            "date": "2023-11-05",
+            "filename": "25a566c0.csv"
+        },
+        {
+            "plate_id": 272,
+            "sample_id": 69,
+            "date": "2023-11-06",
+            "filename": "2a420027.csv"
+        },
+        {
+            "plate_id": 273,
+            "sample_id": 69,
+            "date": "2023-11-08",
+            "filename": "e2628b5f.csv"
+        },
+        {
+            "plate_id": 274,
+            "sample_id": 70,
+            "date": "2023-11-07",
+            "filename": "2134b94e.csv"
+        },
+        {
+            "plate_id": 275,
+            "sample_id": 70,
+            "date": "2023-11-05",
+            "filename": "feddb84f.csv"
+        },
+        {
+            "plate_id": 276,
+            "sample_id": 70,
+            "date": "2023-11-08",
+            "filename": "b87f9d6f.csv"
+        },
+        {
+            "plate_id": 277,
+            "sample_id": 70,
+            "date": "2023-11-08",
+            "filename": "09f9c77a.csv"
+        },
+        {
+            "plate_id": 278,
+            "sample_id": 70,
+            "date": "2023-11-06",
+            "filename": "49afb73d.csv"
+        },
+        {
+            "plate_id": 279,
+            "sample_id": 70,
+            "date": "2023-11-09",
+            "filename": "8afac713.csv"
+        },
+        {
+            "plate_id": 280,
+            "sample_id": 71,
+            "date": "2023-11-06",
+            "filename": "cd9c2ba2.csv"
+        },
+        {
+            "plate_id": 281,
+            "sample_id": 71,
+            "date": "2023-11-05",
+            "filename": "5d50a1ba.csv"
+        },
+        {
+            "plate_id": 282,
+            "sample_id": 71,
+            "date": "2023-11-07",
+            "filename": "d06f8f67.csv"
+        },
+        {
+            "plate_id": 283,
+            "sample_id": 71,
+            "date": "2023-11-06",
+            "filename": "9fe1b32f.csv"
+        },
+        {
+            "plate_id": 284,
+            "sample_id": 72,
+            "date": "2023-11-05",
+            "filename": "bbe6babe.csv"
+        },
+        {
+            "plate_id": 285,
+            "sample_id": 72,
+            "date": "2023-11-08",
+            "filename": "d1e66b3f.csv"
+        },
+        {
+            "plate_id": 286,
+            "sample_id": 72,
+            "date": "2023-11-04",
+            "filename": "a2eab2fd.csv"
+        },
+        {
+            "plate_id": 287,
+            "sample_id": 73,
+            "date": "2023-11-03",
+            "filename": "a770f68b.csv"
+        },
+        {
+            "plate_id": 288,
+            "sample_id": 73,
+            "date": "2023-11-04",
+            "filename": "d2c9a17b.csv"
+        },
+        {
+            "plate_id": 289,
+            "sample_id": 73,
+            "date": "2023-11-08",
+            "filename": "ca32a8c0.csv"
+        },
+        {
+            "plate_id": 290,
+            "sample_id": 73,
+            "date": "2023-11-07",
+            "filename": "81ae6ca0.csv"
+        },
+        {
+            "plate_id": 291,
+            "sample_id": 73,
+            "date": "2023-11-09",
+            "filename": "6b3aeabb.csv"
+        },
+        {
+            "plate_id": 292,
+            "sample_id": 73,
+            "date": "2023-11-05",
+            "filename": "c61bff1a.csv"
+        },
+        {
+            "plate_id": 293,
+            "sample_id": 74,
+            "date": "2023-11-09",
+            "filename": "1e8b6b9a.csv"
+        },
+        {
+            "plate_id": 294,
+            "sample_id": 74,
+            "date": "2023-11-07",
+            "filename": "f6d95e94.csv"
+        },
+        {
+            "plate_id": 295,
+            "sample_id": 74,
+            "date": "2023-11-02",
+            "filename": "a791babc.csv"
+        },
+        {
+            "plate_id": 296,
+            "sample_id": 74,
+            "date": "2023-11-06",
+            "filename": "b7bebfa2.csv"
+        },
+        {
+            "plate_id": 297,
+            "sample_id": 74,
+            "date": "2023-11-02",
+            "filename": "bba10dab.csv"
+        },
+        {
+            "plate_id": 298,
+            "sample_id": 75,
+            "date": "2023-11-09",
+            "filename": "fb3b6fea.csv"
+        },
+        {
+            "plate_id": 299,
+            "sample_id": 75,
+            "date": "2023-11-08",
+            "filename": "93cbe10e.csv"
+        },
+        {
+            "plate_id": 300,
+            "sample_id": 75,
+            "date": "2023-11-07",
+            "filename": "7bdbd7a5.csv"
+        },
+        {
+            "plate_id": 301,
+            "sample_id": 75,
+            "date": "2023-11-05",
+            "filename": "9555b9c9.csv"
+        },
+        {
+            "plate_id": 302,
+            "sample_id": 75,
+            "date": "2023-11-08",
+            "filename": "400beaab.csv"
+        },
+        {
+            "plate_id": 303,
+            "sample_id": 75,
+            "date": "2023-11-07",
+            "filename": "fc4d1bfc.csv"
+        },
+        {
+            "plate_id": 304,
+            "sample_id": 76,
+            "date": "2023-11-09",
+            "filename": "dfcc03fe.csv"
+        },
+        {
+            "plate_id": 305,
+            "sample_id": 76,
+            "date": "2023-11-09",
+            "filename": "16ffbd0d.csv"
+        },
+        {
+            "plate_id": 306,
+            "sample_id": 77,
+            "date": "2023-11-04",
+            "filename": "e9afbef3.csv"
+        },
+        {
+            "plate_id": 307,
+            "sample_id": 77,
+            "date": "2023-11-09",
+            "filename": "ea9bbdbd.csv"
+        },
+        {
+            "plate_id": 308,
+            "sample_id": 77,
+            "date": "2023-11-07",
+            "filename": "785e16fd.csv"
+        },
+        {
+            "plate_id": 309,
+            "sample_id": 77,
+            "date": "2023-11-05",
+            "filename": "f106da54.csv"
+        },
+        {
+            "plate_id": 310,
+            "sample_id": 77,
+            "date": "2023-11-06",
+            "filename": "54df40a6.csv"
+        },
+        {
+            "plate_id": 311,
+            "sample_id": 77,
+            "date": "2023-11-04",
+            "filename": "18366c5d.csv"
+        },
+        {
+            "plate_id": 312,
+            "sample_id": 77,
+            "date": "2023-11-09",
+            "filename": "ab4d4ba4.csv"
+        },
+        {
+            "plate_id": 313,
+            "sample_id": 78,
+            "date": "2023-11-07",
+            "filename": "d59b245c.csv"
+        },
+        {
+            "plate_id": 314,
+            "sample_id": 78,
+            "date": "2023-11-08",
+            "filename": "cbbaef15.csv"
+        },
+        {
+            "plate_id": 315,
+            "sample_id": 78,
+            "date": "2023-11-07",
+            "filename": "6981f58e.csv"
+        },
+        {
+            "plate_id": 316,
+            "sample_id": 78,
+            "date": "2023-11-05",
+            "filename": "6abf36ce.csv"
+        },
+        {
+            "plate_id": 317,
+            "sample_id": 79,
+            "date": "2023-11-09",
+            "filename": "5bfa3ada.csv"
+        },
+        {
+            "plate_id": 318,
+            "sample_id": 79,
+            "date": "2023-11-09",
+            "filename": "9ea1a663.csv"
+        },
+        {
+            "plate_id": 319,
+            "sample_id": 79,
+            "date": "2023-11-09",
+            "filename": "e167122d.csv"
+        },
+        {
+            "plate_id": 320,
+            "sample_id": 80,
+            "date": "2023-11-06",
+            "filename": "ded6be58.csv"
+        },
+        {
+            "plate_id": 321,
+            "sample_id": 80,
+            "date": "2023-11-07",
+            "filename": "3d6d4ada.csv"
+        },
+        {
+            "plate_id": 322,
+            "sample_id": 80,
+            "date": "2023-11-03",
+            "filename": "c3eef9cf.csv"
+        },
+        {
+            "plate_id": 323,
+            "sample_id": 80,
+            "date": "2023-11-02",
+            "filename": "e8546682.csv"
+        },
+        {
+            "plate_id": 324,
+            "sample_id": 80,
+            "date": "2023-11-03",
+            "filename": "83af6dca.csv"
+        },
+        {
+            "plate_id": 325,
+            "sample_id": 80,
+            "date": "2023-11-03",
+            "filename": "81bbb6e2.csv"
+        },
+        {
+            "plate_id": 326,
+            "sample_id": 80,
+            "date": "2023-11-02",
+            "filename": "f6f6865a.csv"
+        },
+        {
+            "plate_id": 327,
+            "sample_id": 82,
+            "date": "2023-11-05",
+            "filename": "28188be4.csv"
+        },
+        {
+            "plate_id": 328,
+            "sample_id": 82,
+            "date": "2023-11-03",
+            "filename": "a8cc7bb0.csv"
+        },
+        {
+            "plate_id": 329,
+            "sample_id": 82,
+            "date": "2023-11-08",
+            "filename": "ce5aad95.csv"
+        },
+        {
+            "plate_id": 330,
+            "sample_id": 82,
+            "date": "2023-11-04",
+            "filename": "72ead8fe.csv"
+        },
+        {
+            "plate_id": 331,
+            "sample_id": 82,
+            "date": "2023-11-02",
+            "filename": "e2e1934a.csv"
+        },
+        {
+            "plate_id": 332,
+            "sample_id": 82,
+            "date": "2023-11-02",
+            "filename": "3ee38247.csv"
+        },
+        {
+            "plate_id": 333,
+            "sample_id": 82,
+            "date": "2023-11-08",
+            "filename": "b58d5eee.csv"
+        },
+        {
+            "plate_id": 334,
+            "sample_id": 83,
+            "date": "2023-11-09",
+            "filename": "c0c31a99.csv"
+        },
+        {
+            "plate_id": 335,
+            "sample_id": 83,
+            "date": "2023-11-09",
+            "filename": "8671895c.csv"
+        },
+        {
+            "plate_id": 336,
+            "sample_id": 84,
+            "date": "2023-11-08",
+            "filename": "a8fa8a71.csv"
+        },
+        {
+            "plate_id": 337,
+            "sample_id": 84,
+            "date": "2023-11-08",
+            "filename": "6cbfca7d.csv"
+        },
+        {
+            "plate_id": 338,
+            "sample_id": 84,
+            "date": "2023-11-03",
+            "filename": "4c8da720.csv"
+        },
+        {
+            "plate_id": 339,
+            "sample_id": 84,
+            "date": "2023-11-06",
+            "filename": "0a1c2a7e.csv"
+        },
+        {
+            "plate_id": 340,
+            "sample_id": 85,
+            "date": "2023-11-04",
+            "filename": "e3192fe2.csv"
+        },
+        {
+            "plate_id": 341,
+            "sample_id": 85,
+            "date": "2023-11-08",
+            "filename": "e07fdeab.csv"
+        },
+        {
+            "plate_id": 342,
+            "sample_id": 85,
+            "date": "2023-11-08",
+            "filename": "763672bb.csv"
+        },
+        {
+            "plate_id": 343,
+            "sample_id": 85,
+            "date": "2023-11-07",
+            "filename": "27db0361.csv"
+        },
+        {
+            "plate_id": 344,
+            "sample_id": 85,
+            "date": "2023-11-07",
+            "filename": "e2a1e91e.csv"
+        },
+        {
+            "plate_id": 345,
+            "sample_id": 85,
+            "date": "2023-11-05",
+            "filename": "a898ab6e.csv"
+        },
+        {
+            "plate_id": 346,
+            "sample_id": 87,
+            "date": "2023-11-07",
+            "filename": "179b6fcb.csv"
+        },
+        {
+            "plate_id": 347,
+            "sample_id": 87,
+            "date": "2023-11-07",
+            "filename": "2712b0ef.csv"
+        },
+        {
+            "plate_id": 348,
+            "sample_id": 87,
+            "date": "2023-11-09",
+            "filename": "bb5aaf62.csv"
+        },
+        {
+            "plate_id": 349,
+            "sample_id": 87,
+            "date": "2023-11-07",
+            "filename": "da5a4aa0.csv"
+        },
+        {
+            "plate_id": 350,
+            "sample_id": 87,
+            "date": "2023-11-09",
+            "filename": "cd063f5b.csv"
+        },
+        {
+            "plate_id": 351,
+            "sample_id": 87,
+            "date": "2023-11-08",
+            "filename": "aa2cbbfa.csv"
+        },
+        {
+            "plate_id": 352,
+            "sample_id": 88,
+            "date": "2023-11-09",
+            "filename": "ecab01dd.csv"
+        },
+        {
+            "plate_id": 353,
+            "sample_id": 88,
+            "date": "2023-11-07",
+            "filename": "cb2bbeee.csv"
+        },
+        {
+            "plate_id": 354,
+            "sample_id": 88,
+            "date": "2023-11-09",
+            "filename": "d26fdbe7.csv"
+        },
+        {
+            "plate_id": 355,
+            "sample_id": 88,
+            "date": "2023-11-08",
+            "filename": "004c72ca.csv"
+        },
+        {
+            "plate_id": 356,
+            "sample_id": 88,
+            "date": "2023-11-08",
+            "filename": "ee74bb83.csv"
+        },
+        {
+            "plate_id": 357,
+            "sample_id": 89,
+            "date": "2023-11-09",
+            "filename": "4c218ec6.csv"
+        },
+        {
+            "plate_id": 358,
+            "sample_id": 89,
+            "date": "2023-11-09",
+            "filename": "206bac3e.csv"
+        },
+        {
+            "plate_id": 359,
+            "sample_id": 89,
+            "date": "2023-11-09",
+            "filename": "fa52e7f1.csv"
+        },
+        {
+            "plate_id": 360,
+            "sample_id": 89,
+            "date": "2023-11-09",
+            "filename": "2504bdd4.csv"
+        },
+        {
+            "plate_id": 361,
+            "sample_id": 89,
+            "date": "2023-11-09",
+            "filename": "fc4be160.csv"
+        },
+        {
+            "plate_id": 362,
+            "sample_id": 89,
+            "date": "2023-11-09",
+            "filename": "2c64bfbb.csv"
+        },
+        {
+            "plate_id": 363,
+            "sample_id": 89,
+            "date": "2023-11-09",
+            "filename": "1660253c.csv"
+        },
+        {
+            "plate_id": 364,
+            "sample_id": 89,
+            "date": "2023-11-09",
+            "filename": "7186d9d8.csv"
+        },
+        {
+            "plate_id": 365,
+            "sample_id": 90,
+            "date": "2023-11-08",
+            "filename": "3d89fd61.csv"
+        },
+        {
+            "plate_id": 366,
+            "sample_id": 90,
+            "date": "2023-11-09",
+            "filename": "9b9dce11.csv"
+        },
+        {
+            "plate_id": 367,
+            "sample_id": 90,
+            "date": "2023-11-08",
+            "filename": "7bcb5922.csv"
+        },
+        {
+            "plate_id": 368,
+            "sample_id": 90,
+            "date": "2023-11-09",
+            "filename": "fe2dc9bf.csv"
+        },
+        {
+            "plate_id": 369,
+            "sample_id": 90,
+            "date": "2023-11-09",
+            "filename": "a7e6ade6.csv"
+        },
+        {
+            "plate_id": 370,
+            "sample_id": 92,
+            "date": "2023-11-03",
+            "filename": "d5ead71a.csv"
+        },
+        {
+            "plate_id": 371,
+            "sample_id": 92,
+            "date": "2023-11-02",
+            "filename": "3b980e2a.csv"
+        },
+        {
+            "plate_id": 372,
+            "sample_id": 92,
+            "date": "2023-11-02",
+            "filename": "caecdb0a.csv"
+        },
+        {
+            "plate_id": 373,
+            "sample_id": 92,
+            "date": "2023-11-09",
+            "filename": "9aaae927.csv"
+        },
+        {
+            "plate_id": 374,
+            "sample_id": 92,
+            "date": "2023-11-01",
+            "filename": "37cd8f86.csv"
+        },
+        {
+            "plate_id": 375,
+            "sample_id": 92,
+            "date": "2023-11-05",
+            "filename": "ddf300fb.csv"
+        },
+        {
+            "plate_id": 376,
+            "sample_id": 93,
+            "date": "2023-11-07",
+            "filename": "15c8cb86.csv"
+        },
+        {
+            "plate_id": 377,
+            "sample_id": 94,
+            "date": "2023-11-07",
+            "filename": "e234aaab.csv"
+        },
+        {
+            "plate_id": 378,
+            "sample_id": 94,
+            "date": "2023-11-07",
+            "filename": "8b636c73.csv"
+        },
+        {
+            "plate_id": 379,
+            "sample_id": 94,
+            "date": "2023-11-08",
+            "filename": "c17c71e0.csv"
+        },
+        {
+            "plate_id": 380,
+            "sample_id": 94,
+            "date": "2023-11-06",
+            "filename": "756d14e2.csv"
+        },
+        {
+            "plate_id": 381,
+            "sample_id": 95,
+            "date": "2023-11-09",
+            "filename": "eee0ac2b.csv"
+        },
+        {
+            "plate_id": 382,
+            "sample_id": 95,
+            "date": "2023-11-04",
+            "filename": "bbee64ce.csv"
+        },
+        {
+            "plate_id": 383,
+            "sample_id": 96,
+            "date": "2023-11-07",
+            "filename": "3fbe0a4c.csv"
+        },
+        {
+            "plate_id": 384,
+            "sample_id": 96,
+            "date": "2023-11-06",
+            "filename": "3efbf4aa.csv"
+        },
+        {
+            "plate_id": 385,
+            "sample_id": 96,
+            "date": "2023-11-06",
+            "filename": "8cbff36c.csv"
+        },
+        {
+            "plate_id": 386,
+            "sample_id": 96,
+            "date": "2023-11-05",
+            "filename": "4b639aad.csv"
+        },
+        {
+            "plate_id": 387,
+            "sample_id": 96,
+            "date": "2023-11-06",
+            "filename": "4dad7fa5.csv"
+        },
+        {
+            "plate_id": 388,
+            "sample_id": 96,
+            "date": "2023-11-07",
+            "filename": "b6aeb60e.csv"
+        },
+        {
+            "plate_id": 389,
+            "sample_id": 98,
+            "date": "2023-11-04",
+            "filename": "7bd16263.csv"
+        },
+        {
+            "plate_id": 390,
+            "sample_id": 99,
+            "date": "2023-11-06",
+            "filename": "cc56ab5f.csv"
+        },
+        {
+            "plate_id": 391,
+            "sample_id": 99,
+            "date": "2023-11-08",
+            "filename": "d7a2b80a.csv"
+        },
+        {
+            "plate_id": 392,
+            "sample_id": 99,
+            "date": "2023-11-08",
+            "filename": "685ece4c.csv"
+        },
+        {
+            "plate_id": 393,
+            "sample_id": 99,
+            "date": "2023-11-09",
+            "filename": "c9cdfb98.csv"
+        },
+        {
+            "plate_id": 394,
+            "sample_id": 100,
+            "date": "2023-11-08",
+            "filename": "0adfea2b.csv"
+        },
+        {
+            "plate_id": 395,
+            "sample_id": 100,
+            "date": "2023-11-08",
+            "filename": "2d23f058.csv"
+        },
+        {
+            "plate_id": 396,
+            "sample_id": 100,
+            "date": "2023-11-05",
+            "filename": "f0609abe.csv"
+        },
+        {
+            "plate_id": 397,
+            "sample_id": 100,
+            "date": "2023-11-06",
+            "filename": "8b2d1a9e.csv"
+        },
+        {
+            "plate_id": 398,
+            "sample_id": 100,
+            "date": "2023-11-07",
+            "filename": "8be8c867.csv"
+        }
+    ],
+    "invalidated": [
+        {
+            "plate_id": 0,
+            "staff_id": 7,
+            "date": "2023-11-06"
+        },
+        {
+            "plate_id": 4,
+            "staff_id": 7,
+            "date": "2023-11-06"
+        },
+        {
+            "plate_id": 13,
+            "staff_id": 7,
+            "date": "2023-11-08"
+        },
+        {
+            "plate_id": 34,
+            "staff_id": 1,
+            "date": "2023-11-09"
+        },
+        {
+            "plate_id": 42,
+            "staff_id": 6,
+            "date": "2023-11-08"
+        },
+        {
+            "plate_id": 52,
+            "staff_id": 6,
+            "date": "2023-11-07"
+        },
+        {
+            "plate_id": 61,
+            "staff_id": 2,
+            "date": "2023-11-09"
+        },
+        {
+            "plate_id": 62,
+            "staff_id": 5,
+            "date": "2023-11-08"
+        },
+        {
+            "plate_id": 65,
+            "staff_id": 8,
+            "date": "2023-11-07"
+        },
+        {
+            "plate_id": 85,
+            "staff_id": 4,
+            "date": "2023-11-05"
+        },
+        {
+            "plate_id": 99,
+            "staff_id": 4,
+            "date": "2023-11-09"
+        },
+        {
+            "plate_id": 110,
+            "staff_id": 8,
+            "date": "2023-11-09"
+        },
+        {
+            "plate_id": 113,
+            "staff_id": 1,
+            "date": "2023-11-09"
+        },
+        {
+            "plate_id": 115,
+            "staff_id": 8,
+            "date": "2023-11-09"
+        },
+        {
+            "plate_id": 119,
+            "staff_id": 3,
+            "date": "2023-11-09"
+        },
+        {
+            "plate_id": 131,
+            "staff_id": 6,
+            "date": "2023-11-08"
+        },
+        {
+            "plate_id": 147,
+            "staff_id": 5,
+            "date": "2023-11-06"
+        },
+        {
+            "plate_id": 148,
+            "staff_id": 2,
+            "date": "2023-11-08"
+        },
+        {
+            "plate_id": 163,
+            "staff_id": 8,
+            "date": "2023-11-09"
+        },
+        {
+            "plate_id": 170,
+            "staff_id": 6,
+            "date": "2023-11-09"
+        },
+        {
+            "plate_id": 178,
+            "staff_id": 4,
+            "date": "2023-11-09"
+        },
+        {
+            "plate_id": 195,
+            "staff_id": 2,
+            "date": "2023-11-07"
+        },
+        {
+            "plate_id": 203,
+            "staff_id": 4,
+            "date": "2023-11-09"
+        },
+        {
+            "plate_id": 211,
+            "staff_id": 4,
+            "date": "2023-11-08"
+        },
+        {
+            "plate_id": 227,
+            "staff_id": 6,
+            "date": "2023-11-07"
+        },
+        {
+            "plate_id": 238,
+            "staff_id": 3,
+            "date": "2023-11-09"
+        },
+        {
+            "plate_id": 239,
+            "staff_id": 8,
+            "date": "2023-11-09"
+        },
+        {
+            "plate_id": 240,
+            "staff_id": 2,
+            "date": "2023-11-08"
+        },
+        {
+            "plate_id": 251,
+            "staff_id": 5,
+            "date": "2023-11-09"
+        },
+        {
+            "plate_id": 257,
+            "staff_id": 5,
+            "date": "2023-11-07"
+        },
+        {
+            "plate_id": 267,
+            "staff_id": 8,
+            "date": "2023-11-07"
+        },
+        {
+            "plate_id": 268,
+            "staff_id": 3,
+            "date": "2023-11-08"
+        },
+        {
+            "plate_id": 277,
+            "staff_id": 8,
+            "date": "2023-11-06"
+        },
+        {
+            "plate_id": 278,
+            "staff_id": 3,
+            "date": "2023-11-09"
+        },
+        {
+            "plate_id": 281,
+            "staff_id": 3,
+            "date": "2023-11-08"
+        },
+        {
+            "plate_id": 288,
+            "staff_id": 3,
+            "date": "2023-11-08"
+        },
+        {
+            "plate_id": 308,
+            "staff_id": 4,
+            "date": "2023-11-09"
+        },
+        {
+            "plate_id": 325,
+            "staff_id": 8,
+            "date": "2023-11-08"
+        },
+        {
+            "plate_id": 336,
+            "staff_id": 2,
+            "date": "2023-11-08"
+        },
+        {
+            "plate_id": 347,
+            "staff_id": 1,
+            "date": "2023-11-09"
+        },
+        {
+            "plate_id": 349,
+            "staff_id": 6,
+            "date": "2023-11-09"
+        },
+        {
+            "plate_id": 371,
+            "staff_id": 2,
+            "date": "2023-11-07"
+        },
+        {
+            "plate_id": 379,
+            "staff_id": 5,
+            "date": "2023-11-06"
+        },
+        {
+            "plate_id": 380,
+            "staff_id": 5,
+            "date": "2023-11-09"
+        },
+        {
+            "plate_id": 389,
+            "staff_id": 3,
+            "date": "2023-11-07"
+        }
+    ]
+}
