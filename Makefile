@@ -1,5 +1,10 @@
 all: commands
 
+## build: build package
+.PHONY: build
+build:
+	python -m build
+
 ## dev: rebuild development version of package
 .PHONY: dev
 dev:

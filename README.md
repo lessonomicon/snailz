@@ -1,6 +1,6 @@
 # Snailz
 
-<img src="./img/snail-logo.svg" alt="snail logo" width="200px">
+<img src="https://raw.githubusercontent.com/gvwilson/snailz/main/img/snail-logo.svg" alt="snail logo" width="200px">
 
 These data generators model genomic analysis of snails in the Pacific Northwest
 that are growing to unusual size as a result of exposure to pollution.
@@ -12,7 +12,7 @@ that are growing to unusual size as a result of exposure to pollution.
 -   Each assay plate has a *design* showing the material applied and *readings* showing the measured response.
 -   Plates may be *invalidated* after the fact if a staff member believes it is contaminated.
 
-<img src="./img/survey.png" alt="survey sites">
+<img src="https://raw.githubusercontent.com/gvwilson/snailz/main/img/survey.png" alt="survey sites">
 
 ## Usage
 
@@ -64,7 +64,7 @@ because its binary representation changes each time it is regenerated
 The map of survey locations in `data/survey.png` is not included in the repository for the same reason,
 but a duplicate is manually saved in `img/survey.png`.
 
-<img src="./img/db-schema.svg" alt="database schema">
+<img src="https://raw.githubusercontent.com/gvwilson/snailz/main/img/db-schema.svg" alt="database schema">
 
 -   `site`: survey site
     -   `site_id`: primary key (text)
@@ -182,7 +182,7 @@ The workflow used to generate the database and data files is shown below:
 -   `snailz grids`: synthesize pollution grids
 -   `snailz clean`: remove all datasets
 
-<img src="./img/workflow.svg" alt="data generation workflow">
+<img src="https://raw.githubusercontent.com/gvwilson/snailz/main/img/workflow.svg" alt="data generation workflow">
 
 ## Parameters
 
