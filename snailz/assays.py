@@ -25,15 +25,15 @@ def assays(options):
     faker.Faker.seed(options.params.seed)
     fake = faker.Faker(options.params.locale)
 
-    individuals = reload_individuals(options)
+    individuals = _reload_individuals(options)
     result = {
-        'staff': make_staff(options.params, fake),
-        **make_experiments(options.params, fake, individuals)
+        'staff': _make_staff(options.params, fake),
+        **_make_experiments(options.params, fake, individuals)
     }
-    save(options.outfile, result)
+    _save(options.outfile, result)
 
 
-def reload_individuals(options):
+def _reload_individuals(options):
     '''Re-create individual genomic information.'''
     genomes = json.loads(Path(options.genomes).read_text())
     samples = pl.read_csv(options.samples)
@@ -42,7 +42,7 @@ def reload_individuals(options):
     return [g[susceptible_loc] == susceptible_base for g in samples['sequence']]
 
 
-def make_experiments(params, fake, individuals):
+def _make_experiments(params, fake, individuals):
     '''Create experiments and their data.'''
     kinds = list(params.assay_types)
     staff_ids = list(range(1, params.staff + 1))
@@ -50,14 +50,14 @@ def make_experiments(params, fake, individuals):
     performed = []
     plates = []
 
-    random_filename = make_random_filename(params)
+    random_filename = _make_random_filename(params)
     for i, flag in enumerate(individuals):
         sample_id = i + 1
         kind = random.choice(kinds)
 
-        started, ended = random_experiment_duration(params, kind)
+        started, ended = _random_experiment_duration(params, kind)
         experiments.append(
-            {'sample_id': sample_id, 'kind': kind, 'start': round_date(started), 'end': round_date(ended)}
+            {'sample_id': sample_id, 'kind': kind, 'start': _round_date(started), 'end': _round_date(ended)}
         )
 
         num_staff = random.randint(*params.assay_staff)
@@ -67,10 +67,10 @@ def make_experiments(params, fake, individuals):
 
         if ended is not None:
             plates.extend(
-                random_plates(params, kind, sample_id, len(plates), started, random_filename)
+                _random_plates(params, kind, sample_id, len(plates), started, random_filename)
             )
 
-    invalidated = invalidate_plates(params, plates)
+    invalidated = _invalidate_plates(params, plates)
 
     return {
         'experiment': experiments,
@@ -80,7 +80,7 @@ def make_experiments(params, fake, individuals):
     }
 
 
-def make_staff(params, fake):
+def _make_staff(params, fake):
     '''Create people.'''
     return [
         {'staff_id': i+1, 'personal': fake.first_name(), 'family': fake.last_name()}
@@ -88,7 +88,7 @@ def make_staff(params, fake):
     ]
 
 
-def invalidate_plates(params, plates):
+def _invalidate_plates(params, plates):
     '''Invalidate a random set of plates.'''
     selected = [
         (i, p['date']) for (i, p) in enumerate(plates) if random.random() < params.invalid
@@ -97,13 +97,13 @@ def invalidate_plates(params, plates):
         {
             'plate_id': plate_id,
             'staff_id': random.randint(1, params.staff + 1),
-            'date': random_date_interval(exp_date, params.enddate),
+            'date': _random_date_interval(exp_date, params.enddate),
         }
         for (plate_id, exp_date) in selected
     ]
 
 
-def make_random_filename(params):
+def _make_random_filename(params):
     '''Create a random filename generator.'''
     filenames = set([''])
     result = ''
@@ -115,7 +115,7 @@ def make_random_filename(params):
         yield result
 
 
-def random_experiment_duration(params, kind):
+def _random_experiment_duration(params, kind):
     '''Choose random start date and end date for experiment.'''
     start = random.uniform(params.startdate.timestamp(), params.enddate.timestamp())
     start = datetime.fromtimestamp(start)
@@ -125,34 +125,34 @@ def random_experiment_duration(params, kind):
     return start, end
 
 
-def random_plates(params, kind, sample_id, start_id, start_date, random_filename):
+def _random_plates(params, kind, sample_id, start_id, start_date, random_filename):
     '''Generate random plate data.'''
     return [
         {
             'plate_id': start_id + i + 1,
             'sample_id': sample_id,
-            'date': random_date_interval(start_date, params.enddate),
+            'date': _random_date_interval(start_date, params.enddate),
             'filename': next(random_filename),
         }
         for i in range(random.randint(*params.assay_plates))
     ]
 
 
-def random_date_interval(start_date, end_date):
+def _random_date_interval(start_date, end_date):
     '''Choose a random end date (inclusive).'''
     if isinstance(start_date, date):
         start_date = datetime(*start_date.timetuple()[:3])
     choice = random.uniform(start_date.timestamp(), end_date.timestamp())
     choice = datetime.fromtimestamp(choice)
-    return round_date(choice)
+    return _round_date(choice)
 
 
-def round_date(raw):
+def _round_date(raw):
     '''Round time to whole day.'''
     return None if raw is None else date(*raw.timetuple()[:3])
 
 
-def save(outfile, result):
+def _save(outfile, result):
     '''Save or show generated data.'''
     as_text = json.dumps(result, indent=4, cls=DateTimeEncoder)
     if outfile:

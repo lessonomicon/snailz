@@ -18,13 +18,13 @@ def plates(options):
     '''Main driver.'''
     options.params = load_params(AssayParams, options.params)
     random.seed(options.params.seed)
-    create_files(options)
+    _create_files(options)
 
 
-def create_files(options):
+def _create_files(options):
     '''Create randomized plate files.'''
-    for filename, sample_id, kind in join_assay_data(options):
-        make_plate(
+    for filename, sample_id, kind in _join_assay_data(options):
+        _make_plate(
             options.params,
             sample_id,
             kind,
@@ -33,18 +33,18 @@ def create_files(options):
         )
 
 
-def generate(params, func):
+def _generate(params, func):
     '''Make body of plate design or results.'''
     title_row = ['', *[chr(ord('A') + col) for col in range(PLATE_WIDTH)]]
     values = [
-        [func(params, make_placement) for col in range(PLATE_WIDTH)]
+        [func(params, _make_placement) for col in range(PLATE_WIDTH)]
         for row in range(PLATE_HEIGHT)
     ]
     labeled = [[str(i + 1), *r] for (i, r) in enumerate(values)]
     return [title_row, *labeled]
 
 
-def join_assay_data(options):
+def _join_assay_data(options):
     '''Get experiment type and plate filename from data.'''
     assays = json.load(open(options.assays, 'r'))
     experiments = {x['sample_id']: x['kind'] for x in assays['experiment']}
@@ -52,7 +52,7 @@ def join_assay_data(options):
     return ((f, plates[f], experiments[plates[f]]) for f in plates)
 
 
-def make_head(kind, sample_id):
+def _make_head(kind, sample_id):
     '''Make head of plate.'''
     return [
         [MODEL, kind, sample_id],
@@ -60,7 +60,7 @@ def make_head(kind, sample_id):
     ]
 
 
-def make_placement(kind):
+def _make_placement(kind):
     '''Generate random placement of samples.'''
     placement = [[False for col in range(PLATE_WIDTH)] for row in range(PLATE_HEIGHT)]
     if kind == 'calibration':
@@ -73,37 +73,37 @@ def make_placement(kind):
     return placement, columns
 
 
-def make_plate(params, sample_id, kind, design_file, readings_file):
+def _make_plate(params, sample_id, kind, design_file, readings_file):
     '''Generate an entire plate.'''
-    placement, sample_locs = make_placement(kind)
+    placement, sample_locs = _make_placement(kind)
 
-    design = [*make_head('design', sample_id), *generate(params, make_treatment)]
-    save_csv(design_file, normalize_csv(design))
+    design = [*_make_head('design', sample_id), *_generate(params, _make_treatment)]
+    _save(design_file, _normalize_csv(design))
 
-    readings = [*make_head('readings', sample_id), *generate(params, make_reading)]
-    save_csv(readings_file, normalize_csv(readings))
+    readings = [*_make_head('readings', sample_id), *_generate(params, _make_reading)]
+    _save(readings_file, _normalize_csv(readings))
 
 
-def make_reading(params, treated):
+def _make_reading(params, treated):
     '''Generate a single plate reading.'''
     mean = params.treated_val if treated else params.control_val
     value = max(0.0, random.gauss(mean, params.stdev))
     return f'{value:.02f}'
 
 
-def make_treatment(params, treated):
+def _make_treatment(params, treated):
     '''Generate a single plate treatment.'''
     return params.treatment if treated else random.choice(params.controls)
 
 
-def normalize_csv(rows):
+def _normalize_csv(rows):
     required = max(len(r) for r in rows)
     for row in rows:
         row.extend([''] * (required - len(row)))
     return rows
 
 
-def save_csv(filename, rows):
+def _save(filename, rows):
     '''Save as CSV.'''
     if not filename:
         csv.writer(sys.stdout).writerows(rows)

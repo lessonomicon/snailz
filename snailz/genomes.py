@@ -29,12 +29,12 @@ def genomes(options):
     assert options.params != options.outfile, 'Cannot use same filename for options and parameters'
     options.params = load_params(GenomeParams, options.params)
     random.seed(options.params.seed)
-    data = random_genomes(options.params)
-    add_susceptibility(data)
-    save(options.outfile, data)
+    data = _random_genomes(options.params)
+    _add_susceptibility(data)
+    _save(options.outfile, data)
 
 
-def add_susceptibility(data):
+def _add_susceptibility(data):
     '''Add indication of genetic susceptibility.'''
     if not data.locations:
         return
@@ -44,18 +44,18 @@ def add_susceptibility(data):
     data.susceptible_base = _choose_one(list(sorted(choices)))
 
 
-def random_bases(length):
+def _random_bases(length):
     '''Generate a random sequence of bases of the specified length.'''
     assert 0 < length
     return ''.join(random.choices(DNA, k=length))
 
 
-def random_genomes(params):
+def _random_genomes(params):
     '''Generate a set of genomes with specified number of point mutations.'''
     assert 0 <= params.num_snp <= params.length
 
     # Reference genomes and specific genomes to modify.
-    reference = random_bases(params.length)
+    reference = _random_bases(params.length)
     individuals = [reference] * params.num_genomes
 
     # Locations for SNPs.
@@ -81,7 +81,7 @@ def random_genomes(params):
     )
 
 
-def save(outfile, data):
+def _save(outfile, data):
     '''Save or show generated data.'''
     as_text = json.dumps(asdict(data), indent=4)
     if outfile:

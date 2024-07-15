@@ -25,19 +25,19 @@ def samples(options):
     options.sites = pl.read_csv(options.sites)
     random.seed(options.params.seed)
     genomes = json.loads(Path(options.genomes).read_text())
-    grids = load_grids(options)
-    samples = generate_samples(options, genomes, grids)
-    save(options, samples)
+    grids = _load_grids(options)
+    samples = _generate_samples(options, genomes, grids)
+    _save(options, samples)
 
 
-def generate_samples(options, genomes, grids):
+def _generate_samples(options, genomes, grids):
     '''Generate snail samples.'''
     params = options.params
     samples = []
     susc_loc = genomes['susceptible_loc']
     susc_base = genomes['susceptible_base']
     for i, seq in enumerate(genomes['individuals']):
-        survey_id, point, contaminated = random_geo(options.sites, options.surveys, grids)
+        survey_id, point, contaminated = _random_geo(options.sites, options.surveys, grids)
         limit = params.mutant if contaminated and (seq[susc_loc] == susc_base) else params.normal
         size = random.uniform(
             params.min_snail_size,
@@ -55,7 +55,7 @@ def generate_samples(options, genomes, grids):
     return df
 
 
-def load_grids(options):
+def _load_grids(options):
     '''Load all grid files.'''
     return {
         s: np.loadtxt(Path(options.grids, f'{s}.csv'), dtype=int, delimiter=',')
@@ -63,7 +63,7 @@ def load_grids(options):
     }
 
 
-def random_geo(sites, surveys, grids):
+def _random_geo(sites, surveys, grids):
     '''Select random point from one of the sample grids.'''
     survey_row = random.randrange(surveys.shape[0])
     survey_id = surveys.item(survey_row, 'survey_id')
@@ -88,7 +88,7 @@ def random_geo(sites, surveys, grids):
     return survey_id, point, contaminated
 
 
-def save(options, samples):
+def _save(options, samples):
     '''Save or show results.'''
     if options.outfile:
         samples.write_csv(Path(options.outfile))

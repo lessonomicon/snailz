@@ -125,10 +125,10 @@ def grid(options):
     for row in options.sites.iter_rows(named=True):
         grid = Grid(options.grids)
         grid.fill()
-        save(options.outdir, row['site_id'], grid)
+        _save(options.outdir, row['site_id'], grid)
 
 
-def save(outdir, site_id, grid):
+def _save(outdir, site_id, grid):
     '''Save grid as CSV.'''
     rows = []
     for y in range(grid.height() - 1, -1, -1):

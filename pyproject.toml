@@ -44,6 +44,12 @@ tests = [
 lint = [
   "ruff",
 ]
+docs = [
+  "markdown-include",
+  "mkdocs",
+  "mkdocstrings[python]",
+  "mkdocs-material",
+]
 
 [project.scripts]
 snailz = "snailz:clui.main"

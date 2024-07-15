@@ -10,6 +10,11 @@ build:
 dev:
 	pip install -e .
 
+## docs: rebuild documentation
+.PHONY: docs
+docs:
+	mkdocs build
+
 ## lint: check code using ruff
 .PHONY: lint
 lint:
