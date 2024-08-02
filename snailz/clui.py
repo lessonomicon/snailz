@@ -1,6 +1,7 @@
 '''Interface for command-line script.'''
 
 import argparse
+import importlib.metadata
 from pathlib import Path
 
 from .assays import assays
@@ -16,6 +17,30 @@ from .params import export_params
 
 
 TOUCH = '.touch'
+
+
+def main():
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--version', action='store_true', help='show version')
+    subparsers = parser.add_subparsers()
+    for sub in (
+            _assays_parser,
+            _db_parser,
+            _everything_parser,
+            _genomes_parser,
+            _grid_parser,
+            _mangle_parser,
+            _params_parser,
+            _plates_parser,
+            _samples_parser,
+            _survey_parser,
+    ):
+        sub(subparsers)
+    options = parser.parse_args()
+    if options.version:
+        print(importlib.metadata.version('snailz'))
+    else:
+        options.func(options)
 
 
 def everything(options):
@@ -113,26 +138,6 @@ def everything(options):
         outfile=survey_map_file,
         samples=samples_data,
     ))
-
-
-def main():
-    parser = argparse.ArgumentParser()
-    subparsers = parser.add_subparsers()
-    for sub in (
-            _assays_parser,
-            _db_parser,
-            _everything_parser,
-            _genomes_parser,
-            _grid_parser,
-            _mangle_parser,
-            _params_parser,
-            _plates_parser,
-            _samples_parser,
-            _survey_parser,
-    ):
-        sub(subparsers)
-    options = parser.parse_args()
-    options.func(options)
 
 
 def _assays_parser(subparsers):
