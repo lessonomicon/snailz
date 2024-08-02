@@ -119,11 +119,11 @@ class Grid:
 
 def grid(options):
     '''Main driver.'''
-    options.grids = load_params(GridParams, options.grids)
+    options.params = load_params(GridParams, options.params)
     options.sites = pl.read_csv(options.sites)
-    random.seed(options.grids.seed)
+    random.seed(options.params.seed)
     for row in options.sites.iter_rows(named=True):
-        grid = Grid(options.grids)
+        grid = Grid(options.params)
         grid.fill()
         _save(options.outdir, row['site_id'], grid)
 

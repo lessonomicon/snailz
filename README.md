@@ -16,43 +16,18 @@ that are growing to unusual size as a result of exposure to pollution.
 
 ## Usage
 
-1.  Create a fresh Python environment: `mamba create -y -n snailz python=3.12`
+1.  Create a fresh Python environment: `mamba create -y -n snailz python=3.11`
 2.  Activate that environment: `mamba activate snailz`
 3.  Build development version of package: `pip install -e .`
 4.  View available commands: `snailz --help`
-5.  Copy default parameter files: `snailz params --outdir .`
+5.  Copy default parameter files: `snailz params --outdir ./params`
 6.  See how to regenerate datasets: `python -c 'import snailz; help(snailz)'`
 
-This project also includes a Makefile that will re-execute commands as needed.
-To see available commands, run:
+To regenerate all data using the default parameters provided, run:
 
 ```
-make DATA=data PARAMS=snailz/params commands
+snailz everything --paramsdir ./params --datadir ./data --verbose
 ```
-
-(To keep the Makefile simple,
-`DATA` and `PARAMS` must be defined even for commands that don't need them.)
-To regenerate all of the datasets, run:
-
-```
-make DATA=data PARAMS=snailz/params datasets
-```
-
-| command    | action                                 |
-| ---------- | -------------------------------------- |
-| `dev`      | rebuild development version of package |
-| `lint`     | check code using ruff                  |
-| `clean`    | remove datafiles                       |
-| `commands` | show available commands                |
-| `datasets` | make all datasets                      |
-| `survey`   | generate survey map                    |
-| `mangled`  | create inconsistent plate files        |
-| `db`       | generate database                      |
-| `plates`   | generate plate files                   |
-| `assays`   | generate assay files                   |
-| `samples`  | sample snails from survey sites        |
-| `genomes`  | synthesize genomes                     |
-| `grids`    | synthesize pollution grids             |
 
 ## Database
 

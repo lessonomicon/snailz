@@ -1,5 +1,17 @@
 all: commands
 
+## commands: show available commands
+.PHONY: commands
+commands:
+	@grep -h -E '^##' ${MAKEFILE_LIST} \
+	| sed -e 's/## //g' \
+	| column -t -s ':'
+
+## datasets: generate datasets
+.PHONY: datasets
+datasets:
+	snailz everything --paramsdir snailz/params --datadir data --verbose
+
 ## build: build package
 .PHONY: build
 build:
@@ -29,7 +41,3 @@ clean:
 	@rm -rf ./data/*
 	@mkdir -p ./data
 	@touch ./data/.touch
-
-## ---: ---
-
-include snailz/Makefile
