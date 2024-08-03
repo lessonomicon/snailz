@@ -13,7 +13,6 @@ DEFAULT_START_DATE = datetime.strptime('2023-11-01', DATE_FORMAT)
 DEFAULT_END_DATE = datetime.strptime('2023-11-10', DATE_FORMAT)
 RADIUS = 200.0
 PARAMETER_FILES = (
-    'Makefile',
     'params/assays.json',
     'params/genomes.json',
     'params/grids.json',
