@@ -11,7 +11,7 @@ from .grid import grid
 from .mangle import mangle
 from .plates import plates
 from .samples import samples
-from .survey import survey
+from .surveymap import surveymap
 
 from .params import export_params
 
@@ -33,7 +33,7 @@ def main():
             _params_parser,
             _plates_parser,
             _samples_parser,
-            _survey_parser,
+            _surveymap_parser,
     ):
         sub(subparsers)
     options = parser.parse_args()
@@ -60,7 +60,7 @@ def everything(options):
     samples_params = Path(options.paramsdir, 'samples.json')
     sites_params = Path(options.paramsdir, 'sites.csv')
     surveys_params = Path(options.paramsdir, 'surveys.csv')
-    survey_map_file = Path(options.datadir, 'survey.png')
+    surveymap_file = Path(options.datadir, 'survey.png')
 
     # Grids
     _verbose(options, 'grids')
@@ -133,11 +133,12 @@ def everything(options):
     Path(mangled_data_dir, TOUCH).touch()
 
     # Survey map
-    _verbose(options, 'survey')
-    survey(_make_options(
-        outfile=survey_map_file,
-        samples=samples_data,
-    ))
+    if options.withmap:
+        _verbose(options, 'survey map')
+        surveymap(_make_options(
+            outfile=surveymap_file,
+            samples=samples_data,
+        ))
 
 
 def _assays_parser(subparsers):
@@ -163,6 +164,7 @@ def _everything_parser(subparsers):
     parser = subparsers.add_parser('everything', help='build everything with defaults')
     parser.add_argument('--datadir', type=str, required=True, help='output data directory')
     parser.add_argument('--paramsdir', type=str, required=True, help='input parameters directory')
+    parser.add_argument('--withmap', action='store_true', help='also generate map')
     parser.add_argument('--verbose', action='store_true', help='report progress')
     parser.set_defaults(func=everything)
 
@@ -216,11 +218,11 @@ def _samples_parser(subparsers):
     parser.set_defaults(func=samples)
 
 
-def _survey_parser(subparsers):
-    parser = subparsers.add_parser('survey', help='construct survey locations')
+def _surveymap_parser(subparsers):
+    parser = subparsers.add_parser('surveymap', help='construct survey locations')
     parser.add_argument('--outfile', type=str, required=True, help='output file name')
     parser.add_argument('--samples', type=str, required=True, help='samples data file')
-    parser.set_defaults(func=survey)
+    parser.set_defaults(func=surveymap)
 
 
 def _make_options(**kwargs):

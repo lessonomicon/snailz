@@ -4,7 +4,7 @@ import plotly.graph_objects as go
 import polars as pl
 
 
-def survey(options):
+def surveymap(options):
     '''Main driver.'''
     samples = pl.read_csv(options.samples)['survey_id', 'lon', 'lat']
     fig = go.Figure(go.Scattermapbox(

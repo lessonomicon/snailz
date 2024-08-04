@@ -71,7 +71,7 @@ from .grid import grid
 from .mangle import mangle
 from .plates import plates
 from .samples import samples
-from .survey import survey
+from .surveymap import surveymap
 
 __all__ = [
     'assays',
@@ -81,5 +81,5 @@ __all__ = [
     'mangle',
     'plates',
     'samples',
-    'survey',
+    'surveymap',
 ]
