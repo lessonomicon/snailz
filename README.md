@@ -197,7 +197,8 @@ see the table of commands given earlier for options.
     -   `controls`: labels to used for control wells (list of text)
     -   `enddate`: end of all experiments
     -   `filename_length`: length of stem of design/readings filenames (int > 0)
-    -   `invalid`: probability of plate being invalidted (float in 0..1)
+    -   `fraction`: fraction of samples that have been used in experiments
+    -   `invalid`: probability of plate being invalidated (float in 0..1)
     -   `locale`: locale to use when generating staff names (text)
     -   `seed`: RNG seed (int > 0)
     -   `staff`: number of staff (int > 0)

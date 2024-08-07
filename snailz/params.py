@@ -35,6 +35,7 @@ class AssayParams:
     enddate: date = None
     experiments: int = 1
     filename_length: int = 8
+    fraction: float = None
     invalid: float = 0.1
     locale: str = 'en_IN'
     seed: int = None

@@ -25,16 +25,16 @@ def assays(options):
     faker.Faker.seed(options.params.seed)
     fake = faker.Faker(options.params.locale)
 
-    individuals = _reload_individuals(options)
+    samples = _reload_samples(options)
     result = {
         'staff': _make_staff(options.params, fake),
-        **_make_experiments(options.params, fake, individuals)
+        **_make_experiments(options.params, fake, samples)
     }
     _save(options.outfile, result)
 
 
-def _reload_individuals(options):
-    '''Re-create individual genomic information.'''
+def _reload_samples(options):
+    '''Re-create sample genomic information.'''
     genomes = json.loads(Path(options.genomes).read_text())
     samples = pl.read_csv(options.samples)
     susceptible_loc = genomes['susceptible_loc']
@@ -42,7 +42,7 @@ def _reload_individuals(options):
     return [g[susceptible_loc] == susceptible_base for g in samples['sequence']]
 
 
-def _make_experiments(params, fake, individuals):
+def _make_experiments(params, fake, samples):
     '''Create experiments and their data.'''
     kinds = list(params.assay_types)
     staff_ids = list(range(1, params.staff + 1))
@@ -50,11 +50,16 @@ def _make_experiments(params, fake, individuals):
     performed = []
     plates = []
 
+    num_samples = len(samples)
+    keepers = set(random.sample(list(range(num_samples)), k=int(params.fraction * num_samples)))
+
     random_filename = _make_random_filename(params)
-    for i, flag in enumerate(individuals):
+    for i, flag in enumerate(samples):
+        if i not in keepers:
+            continue
+
         sample_id = i + 1
         kind = random.choice(kinds)
-
         started, ended = _random_experiment_duration(params, kind)
         experiments.append(
             {'sample_id': sample_id, 'kind': kind, 'start': _round_date(started), 'end': _round_date(ended)}
