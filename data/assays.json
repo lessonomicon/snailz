@@ -1,41 +1,4 @@
 {
-    "staff": [
-        {
-            "staff_id": 1,
-            "personal": "Lavanya",
-            "family": "Hayer"
-        },
-        {
-            "staff_id": 2,
-            "personal": "Sumer",
-            "family": "Tara"
-        },
-        {
-            "staff_id": 3,
-            "personal": "Kiaan",
-            "family": "Karnik"
-        },
-        {
-            "staff_id": 4,
-            "personal": "Yuvaan",
-            "family": "Kumar"
-        },
-        {
-            "staff_id": 5,
-            "personal": "Charvi",
-            "family": "Karnik"
-        },
-        {
-            "staff_id": 6,
-            "personal": "Advik",
-            "family": "Srivastava"
-        },
-        {
-            "staff_id": 7,
-            "personal": "Anay",
-            "family": "Varma"
-        }
-    ],
     "experiment": [
         {
             "sample_id": 1,
@@ -2391,18 +2354,18 @@
     "invalidated": [
         {
             "plate_id": 6,
-            "staff_id": 4,
+            "staff_id": 2,
             "date": "2023-11-08"
         },
         {
             "plate_id": 17,
-            "staff_id": 6,
-            "date": "2023-11-05"
+            "staff_id": 5,
+            "date": "2023-11-06"
         },
         {
             "plate_id": 18,
-            "staff_id": 6,
-            "date": "2023-11-07"
+            "staff_id": 1,
+            "date": "2023-11-06"
         },
         {
             "plate_id": 21,
@@ -2411,98 +2374,98 @@
         },
         {
             "plate_id": 25,
-            "staff_id": 7,
+            "staff_id": 6,
             "date": "2023-11-06"
         },
         {
             "plate_id": 35,
-            "staff_id": 1,
-            "date": "2023-11-07"
+            "staff_id": 4,
+            "date": "2023-11-06"
         },
         {
             "plate_id": 38,
-            "staff_id": 6,
-            "date": "2023-11-09"
+            "staff_id": 7,
+            "date": "2023-11-07"
         },
         {
             "plate_id": 45,
-            "staff_id": 6,
+            "staff_id": 5,
             "date": "2023-11-09"
         },
         {
             "plate_id": 46,
             "staff_id": 7,
-            "date": "2023-11-09"
+            "date": "2023-11-07"
         },
         {
             "plate_id": 49,
-            "staff_id": 6,
+            "staff_id": 5,
             "date": "2023-11-09"
         },
         {
             "plate_id": 71,
-            "staff_id": 6,
-            "date": "2023-11-09"
+            "staff_id": 5,
+            "date": "2023-11-07"
         },
         {
             "plate_id": 81,
-            "staff_id": 6,
+            "staff_id": 4,
             "date": "2023-11-09"
         },
         {
             "plate_id": 85,
             "staff_id": 6,
-            "date": "2023-11-03"
+            "date": "2023-11-08"
         },
         {
             "plate_id": 92,
-            "staff_id": 8,
+            "staff_id": 7,
             "date": "2023-11-09"
         },
         {
             "plate_id": 98,
-            "staff_id": 4,
+            "staff_id": 1,
             "date": "2023-11-09"
         },
         {
             "plate_id": 112,
-            "staff_id": 2,
+            "staff_id": 7,
             "date": "2023-11-09"
         },
         {
             "plate_id": 123,
-            "staff_id": 8,
-            "date": "2023-11-06"
+            "staff_id": 1,
+            "date": "2023-11-08"
         },
         {
             "plate_id": 129,
-            "staff_id": 3,
-            "date": "2023-11-06"
+            "staff_id": 7,
+            "date": "2023-11-07"
         },
         {
             "plate_id": 141,
             "staff_id": 2,
-            "date": "2023-11-02"
+            "date": "2023-11-05"
         },
         {
             "plate_id": 163,
-            "staff_id": 8,
+            "staff_id": 6,
             "date": "2023-11-07"
         },
         {
             "plate_id": 197,
-            "staff_id": 4,
-            "date": "2023-11-05"
+            "staff_id": 7,
+            "date": "2023-11-08"
         },
         {
             "plate_id": 203,
-            "staff_id": 2,
+            "staff_id": 4,
             "date": "2023-11-09"
         },
         {
             "plate_id": 204,
-            "staff_id": 1,
-            "date": "2023-11-07"
+            "staff_id": 2,
+            "date": "2023-11-05"
         }
     ]
 }

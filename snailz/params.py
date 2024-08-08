@@ -18,6 +18,7 @@ PARAMETER_FILES = (
     'params/grids.json',
     'params/samples.json',
     'params/sites.csv',
+    'params/staff.json',
     'params/surveys.csv',
 )
 
@@ -26,8 +27,8 @@ PARAMETER_FILES = (
 class AssayParams:
     '''Parameters for assay data generation.'''
 
-    assay_types: list
     assay_staff: list
+    assay_types: list
     assay_duration: list
     assay_plates: list
     control_val: float = 5.0
@@ -37,9 +38,7 @@ class AssayParams:
     filename_length: int = 8
     fraction: float = None
     invalid: float = 0.1
-    locale: str = 'en_IN'
     seed: int = None
-    staff: int = 1
     startdate: date = None
     stdev: float = 3.0
     treated_val: float = 8.0
@@ -85,6 +84,14 @@ class SampleParams:
     max_snail_size: float = None
     mutant: float = None
     normal: float = None
+    seed: int = None
+
+
+@dataclass
+class StaffParams:
+    '''Staff parameters.'''
+    locale: str = 'hy_AM'
+    num: int = None
     seed: int = None
 
 

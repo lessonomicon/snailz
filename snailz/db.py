@@ -11,12 +11,12 @@ def db(options):
     '''Main driver.'''
     url = f'sqlite:///{options.dbfile}'
 
+    _csv_to_db(url, 'staff', options.staff)
     _csv_to_db(url, 'sample', options.samples)
     _csv_to_db(url, 'site', options.sites)
     _csv_to_db(url, 'survey', options.surveys, dates=['date'], columns=['survey_id', 'site_id', 'date'])
 
     assays = json.load(open(options.assays, 'r'))
-    _json_to_db(url, assays, 'staff')
     _json_to_db(url, assays, 'experiment', dates=['start', 'end'])
     _json_to_db(url, assays, 'performed')
     _json_to_db(url, assays, 'plate', dates=['date'])

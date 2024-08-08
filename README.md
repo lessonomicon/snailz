@@ -86,6 +86,10 @@ it does *not* contain the SQLite database file `lab.db`;
 run `snailz db` to regenerate it.
 (See `help(snailz)` for an example invocation.)
 
+-   Staff: `staff.csv`
+    -   `staff_id`: unique staff member identifier (int > 0)
+    -   `personal`: personal name (text)
+    -   `family`: family name (text)
 -   Genomes: `genomes.json`
     -   `length`: number of base pairs (int > 0)
     -   `reference`: the unmutated reference genome (text)
@@ -103,10 +107,6 @@ run `snailz db` to regenerate it.
     -   `sequence`: sampled gene sequence (text)
     -   `size`: snail weight (float, grams)
 -   Assays: `assays.json`
-    -   `staff`:
-        -   `staff_id`: unique staff member identifier (int > 0)
-        -   `personal`: personal name (text)
-        -   `family`: family name (text)
     -   `experiment`: experiment details
         -   `sample_id`: sample that experiment used (int > 0)
         -   `kind`: "ELISA" or "JESS" (text)
@@ -146,16 +146,17 @@ run `snailz db` to regenerate it.
 The workflow used to generate the database and data files is shown below:
 
 -   `snailz` or `snailz --help`: show available commands
--   `snailz all`: make all datasets
--   `snailz map`: generate SVG map of sample locations (in progress)
+-   `snailz clean`: remove all datasets
+-   `snailz everything`: make all datasets
+-   `snailz grids`: synthesize pollution grids
+-   `snailz genomes`: synthesize genomes
+-   `snailz samples`: sample snails from survey sites
+-   `snailz staff`: synthesize staff
+-   `snailz assays`: generate assay files
+-   `snailz plates`: generate plate files
 -   `snailz mangle`: create mangled plate reading files
 -   `snailz db`: generate database
--   `snailz plates`: generate plate files
--   `snailz assays`: generate assay files
--   `snailz samples`: sample snails from survey sites
--   `snailz genomes`: synthesize genomes
--   `snailz grids`: synthesize pollution grids
--   `snailz clean`: remove all datasets
+-   `snailz map`: generate SVG map of sample locations (in progress)
 
 <img src="https://raw.githubusercontent.com/gvwilson/snailz/main/img/workflow.svg" alt="data generation workflow">
 
@@ -171,6 +172,11 @@ see the table of commands given earlier for options.
     -   `site_id`: unique label for site (text)
     -   `lon`: longitude of site reference marker (deg)
     -   `lat`: latitude of site reference marker (deg)
+-   Grids: `grids.json`
+    -   `depth`: range of random values per cell (int > 0)
+    -   `height`: number of cells on Y axis (int > 0)
+    -   `seed`: RNG seed (int > 0)
+    -   `width`: number of cells on X axis (int > 0)
 -   Surveys: `surveys.csv`
     -   `survey_id`: unique label for survey (text)
     -   `site_id`: ID of site where survey was conducted (text)
@@ -183,11 +189,10 @@ see the table of commands given earlier for options.
     -   `prob_other`: probability of non-significant mutations (float in 0..1)
     -   `seed`: RNG seed (int > 0)
     -   `snp_probs`: probability of selecting various bases (list of 4 float summing to 1.0)
--   Grids: `grids.json`
-    -   `depth`: range of random values per cell (int > 0)
-    -   `height`: number of cells on Y axis (int > 0)
+-   Staff: `staff.json`
+    -   `locale`: locale to use when generating staff names (text)
+    -   `num`: number of staff (int > 0)
     -   `seed`: RNG seed (int > 0)
-    -   `width`: number of cells on X axis (int > 0)
 -   Assays: `assays.json`
     -   `assay_duration`: range of days for each assay (ordered pair of int >= 0)
     -   `assay_plates`: range of plates per assay (ordered pair of int >= 1)
@@ -199,9 +204,7 @@ see the table of commands given earlier for options.
     -   `filename_length`: length of stem of design/readings filenames (int > 0)
     -   `fraction`: fraction of samples that have been used in experiments
     -   `invalid`: probability of plate being invalidated (float in 0..1)
-    -   `locale`: locale to use when generating staff names (text)
     -   `seed`: RNG seed (int > 0)
-    -   `staff`: number of staff (int > 0)
     -   `startdate`: start of all experiments
     -   `stdev`: standard deviation on readings (float > 0)
     -   `treated_val`: nominal reading value for treated well (float > 0)

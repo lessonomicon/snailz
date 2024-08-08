@@ -11,6 +11,7 @@ from .grid import grid
 from .mangle import mangle
 from .plates import plates
 from .samples import samples
+from .staff import staff
 from .surveymap import surveymap
 
 from .params import export_params
@@ -33,6 +34,7 @@ def main():
             _params_parser,
             _plates_parser,
             _samples_parser,
+            _staff_parser,
             _surveymap_parser,
     ):
         sub(subparsers)
@@ -59,6 +61,8 @@ def everything(options):
     samples_data = Path(options.datadir, 'samples.csv')
     samples_params = Path(options.paramsdir, 'samples.json')
     sites_params = Path(options.paramsdir, 'sites.csv')
+    staff_data = Path(options.datadir, 'staff.csv')
+    staff_params = Path(options.paramsdir, 'staff.json')
     surveys_params = Path(options.paramsdir, 'surveys.csv')
     surveymap_file = Path(options.datadir, 'survey.png')
 
@@ -90,6 +94,13 @@ def everything(options):
         surveys=surveys_params,
     ))
 
+    # Staff
+    _verbose(options, 'staff')
+    staff(_make_options(
+        params=staff_params,
+        outfile=staff_data,
+    ))
+
     # Assays
     _verbose(options, 'assays')
     assays(_make_options(
@@ -97,6 +108,7 @@ def everything(options):
         outfile=assays_data,
         params=assays_params,
         samples=samples_data,
+        staff=staff_data,
     ))
 
     # Plates
@@ -119,6 +131,7 @@ def everything(options):
         assays=assays_data,
         samples=samples_data,
         sites=sites_params,
+        staff=staff_data,
         surveys=surveys_params,
     ))
 
@@ -147,6 +160,7 @@ def _assays_parser(subparsers):
     parser.add_argument('--outfile', type=str, default=None, help='output file')
     parser.add_argument('--params', type=str, required=True, help='parameter file')
     parser.add_argument('--samples', type=str, required=True, help='samples file')
+    parser.add_argument('--staff', type=str, required=True, help='staff file')
     parser.set_defaults(func=assays)
 
 
@@ -216,6 +230,13 @@ def _samples_parser(subparsers):
     parser.add_argument('--sites', type=str, required=True, help='sites parameter file')
     parser.add_argument('--surveys', type=str, required=True, help='surveys parameter file')
     parser.set_defaults(func=samples)
+
+
+def _staff_parser(subparsers):
+    parser = subparsers.add_parser('staff', help='construct staff names and IDs')
+    parser.add_argument('--params', type=str, required=True, help='parameter file')
+    parser.add_argument('--outfile', type=str, required=True, help='output file name')
+    parser.set_defaults(func=staff)
 
 
 def _surveymap_parser(subparsers):

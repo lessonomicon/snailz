@@ -1,7 +1,6 @@
 '''Generate assays.'''
 
 from datetime import date, datetime, timedelta
-import faker
 import json
 from pathlib import Path
 import polars as pl
@@ -22,30 +21,30 @@ def assays(options):
     assert options.params != options.outfile, 'Cannot use same filename for options and parameters'
     options.params = load_params(AssayParams, options.params)
     random.seed(options.params.seed)
-    faker.Faker.seed(options.params.seed)
-    fake = faker.Faker(options.params.locale)
 
     samples = _reload_samples(options)
-    result = {
-        'staff': _make_staff(options.params, fake),
-        **_make_experiments(options.params, fake, samples)
-    }
+    staff_ids = _reload_staff(options)
+    result = _make_experiments(options.params, samples, staff_ids)
     _save(options.outfile, result)
 
 
 def _reload_samples(options):
     '''Re-create sample genomic information.'''
     genomes = json.loads(Path(options.genomes).read_text())
+    susc_loc = genomes['susceptible_loc']
+    susc_base = genomes['susceptible_base']
     samples = pl.read_csv(options.samples)
-    susceptible_loc = genomes['susceptible_loc']
-    susceptible_base = genomes['susceptible_base']
-    return [g[susceptible_loc] == susceptible_base for g in samples['sequence']]
+    return [g[susc_loc] == susc_base for g in samples['sequence']]
 
 
-def _make_experiments(params, fake, samples):
+def _reload_staff(options):
+    '''Re-load staff information.'''
+    return pl.read_csv(options.staff)['staff_id'].to_list()
+
+
+def _make_experiments(params, samples, staff_ids):
     '''Create experiments and their data.'''
     kinds = list(params.assay_types)
-    staff_ids = list(range(1, params.staff + 1))
     experiments = []
     performed = []
     plates = []
@@ -75,7 +74,7 @@ def _make_experiments(params, fake, samples):
                 _random_plates(params, kind, sample_id, len(plates), started, random_filename)
             )
 
-    invalidated = _invalidate_plates(params, plates)
+    invalidated = _invalidate_plates(params, staff_ids, plates)
 
     return {
         'experiment': experiments,
@@ -85,15 +84,7 @@ def _make_experiments(params, fake, samples):
     }
 
 
-def _make_staff(params, fake):
-    '''Create people.'''
-    return [
-        {'staff_id': i+1, 'personal': fake.first_name(), 'family': fake.last_name()}
-        for i in range(params.staff)
-    ]
-
-
-def _invalidate_plates(params, plates):
+def _invalidate_plates(params, staff_ids, plates):
     '''Invalidate a random set of plates.'''
     selected = [
         (i, p['date']) for (i, p) in enumerate(plates) if random.random() < params.invalid
@@ -101,7 +92,7 @@ def _invalidate_plates(params, plates):
     return [
         {
             'plate_id': plate_id,
-            'staff_id': random.randint(1, params.staff + 1),
+            'staff_id': random.choice(staff_ids),
             'date': _random_date_interval(exp_date, params.enddate),
         }
         for (plate_id, exp_date) in selected
