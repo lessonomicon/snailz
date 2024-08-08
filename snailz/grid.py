@@ -130,9 +130,8 @@ def grid(options):
 
 def _save(outdir, site_id, grid):
     '''Save grid as CSV.'''
-    rows = []
-    for y in range(grid.height() - 1, -1, -1):
-        rows.append(','.join('1' if grid[x, y] == 0 else '0' for x in range(grid.width())))
     Path(outdir).mkdir(parents=True, exist_ok=True)
     with open(Path(outdir, f'{site_id}.csv'), 'w') as writer:
-        print('\n'.join(rows), file=writer)
+        for y in range(grid.height() - 1, -1, -1):
+            values = ('1' if grid[x, y] == 0 else '0' for x in range(grid.width()))
+            print(','.join(values), file=writer)
