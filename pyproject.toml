@@ -10,7 +10,7 @@ mypkg = ["*.json", "*.csv"]
 
 [project]
 name = "snailz"
-version = "0.1.8"
+version = "0.1.9"
 authors = [
     {name = "Greg Wilson", email = "gvwilson@third-bit.com"},
 ]

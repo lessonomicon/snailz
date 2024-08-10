@@ -98,7 +98,7 @@ run `snailz db` to regenerate it.
     -   `susceptible_loc`: location of mutation of interest (int >= 0)
     -   `susceptible_base`: mutated base responsible for size change (char)
 -   Grids: `grids/*.csv` (one file per site)
-    -   1/0: presence/absence of contamination at sample location
+    -   values are contamination levels at sample points (0 means no contamination)
 -   Samples: `grids/samples.csv`
     -   `sample_id`: unique ID for genetic sample (text)
     -   `survey_id`: which survey it was taken in (text)

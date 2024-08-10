@@ -82,7 +82,7 @@ def _random_geo(sites, surveys, grids):
     grid = grids[site_id]
     width, height = grid.shape
     rand_x, rand_y = random.randrange(width), random.randrange(height)
-    contaminated = bool(grid[rand_x, rand_x])
+    contaminated = bool(grid[rand_x, rand_x] != 0)
 
     # Generate point.
     corner = lonlat(site_lon, site_lat)

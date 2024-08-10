@@ -35,30 +35,33 @@ class Grid:
     def __str__(self):
         '''Convert to printable string.'''
         rows = []
-        for y in range(self.height() - 1, -1, -1):
-            rows.append(''.join('x' if self[x, y] == 0 else '.' for x in range(self.width())))
+        for y in range(self.height - 1, -1, -1):
+            rows.append(''.join('x' if self[x, y] == 0 else '.' for x in range(self.width)))
         return '\n'.join(rows)
 
+    @property
     def depth(self):
         '''Get depth of grid.'''
         return self._depth
 
+    @property
     def height(self):
         '''Get height of grid.'''
         return self._height
 
+    @property
     def width(self):
         '''Get width of grid.'''
         return self._width
 
     def fill(self):
         '''Fill grid one cell at a time.'''
-        x, y = self.width() // 2, self.height() // 2
-        self[x, y] = 0
+        x, y = self.width // 2, self.height // 2
+        self[x, y] = - self[x, y]
         self.add_candidates(x, y)
         while True:
             x, y = self.choose_cell()
-            self[x, y] = 0
+            self[x, y] = - self[x, y]
             if self.on_border(x, y):
                 break
 
@@ -71,9 +74,9 @@ class Grid:
 
     def add_one_candidate(self, x, y):
         '''Add (x, y) if suitable.'''
-        if (x < 0) or (x >= self.width()) or (y < 0) or (y >= self.height()):
+        if (x < 0) or (x >= self.width) or (y < 0) or (y >= self.height):
             return
-        if self[x, y] == 0:
+        if self[x, y] < 0:
             return
 
         value = self[x, y]
@@ -84,13 +87,13 @@ class Grid:
     def adjacent(self, x, y):
         '''Is (x, y) adjacent to a filled cell?'''
         x_1, y_1 = x + 1, y + 1
-        if (x > 0) and (self[x - 1, y] == 0):
+        if (x > 0) and (self[x - 1, y] < 0):
             return True
-        if (x_1 < self.width()) and (self[x_1, y] == 0):
+        if (x_1 < self.width) and (self[x_1, y] < 0):
             return True
-        if (y > 0) and (self[x, y - 1] == 0):
+        if (y > 0) and (self[x, y - 1] < 0):
             return True
-        if (y_1 < self.height()) and (self[x, y_1] == 0):
+        if (y_1 < self.height) and (self[x, y_1] < 0):
             return True
         return False
 
@@ -110,9 +113,9 @@ class Grid:
 
     def on_border(self, x, y):
         '''Is this cell on the border of the grid?'''
-        if (x == 0) or (x == self.width() - 1):
+        if (x == 0) or (x == self.width - 1):
             return True
-        if (y == 0) or (y == self.height() - 1):
+        if (y == 0) or (y == self.height - 1):
             return True
         return False
 
@@ -132,6 +135,6 @@ def _save(outdir, site_id, grid):
     '''Save grid as CSV.'''
     Path(outdir).mkdir(parents=True, exist_ok=True)
     with open(Path(outdir, f'{site_id}.csv'), 'w') as writer:
-        for y in range(grid.height() - 1, -1, -1):
-            values = ('1' if grid[x, y] == 0 else '0' for x in range(grid.width()))
-            print(','.join(values), file=writer)
+        for y in range(grid.height - 1, -1, -1):
+            values = (- grid[x, y] if grid[x, y] < 0 else 0 for x in range(grid.width))
+            print(','.join((str(v) for v in values)), file=writer)
