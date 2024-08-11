@@ -1,5 +1,6 @@
 '''Parameter dataclasses and utilities.'''
 
+from argparse import Namespace
 from dataclasses import dataclass, field
 from datetime import date, datetime
 from importlib.resources import files
@@ -8,10 +9,14 @@ from pathlib import Path
 from typing import List
 
 
+# Use ISO date format.
 DATE_FORMAT = '%Y-%m-%d'
+
+# Start and end dates for experiemnts.
 DEFAULT_START_DATE = datetime.strptime('2023-11-01', DATE_FORMAT)
 DEFAULT_END_DATE = datetime.strptime('2023-11-10', DATE_FORMAT)
-RADIUS = 200.0
+
+# Parameter files to include in package.
 PARAMETER_FILES = (
     'params/assays.json',
     'params/genomes.json',
@@ -45,7 +50,7 @@ class AssayParams:
     treatment: str = None
 
     def __post_init__(self):
-        '''Convert dates if provided.'''
+        '''Fill in missing dates and convert to standard format.'''
         if self.startdate is None:
             self.startdate = DEFAULT_START_DATE
         else:
@@ -90,13 +95,18 @@ class SampleParams:
 @dataclass
 class StaffParams:
     '''Staff parameters.'''
-    locale: str = 'hy_AM'
+    locale: str = 'et_EE'
     num: int = None
     seed: int = None
 
 
-def export_params(options):
-    '''Export parameter files.'''
+def export_params(options: Namespace) -> None:
+    '''Export parameter files.
+
+    This function is used to write default parameter files when the package is installed.
+
+    -   options.outdir: directory to write to.
+    '''
     outdir = Path(options.outdir)
     outdir.mkdir(parents=True, exist_ok=True)
     root = files(__name__.split('.')[0])
@@ -106,6 +116,14 @@ def export_params(options):
         dst.write_bytes(src.read_bytes())
 
 
-def load_params(cls, filename):
-    '''Load parameters from file.'''
+def load_params(cls: type, filename: str) -> object:
+    '''Load parameters from file and return as object.
+
+    Args:
+        cls: class to instantiate.
+        filename: file containing JSON representation of parameters.
+
+    Returns:
+        Populated instance of the given class.
+    '''
     return cls(**json.loads(Path(filename).read_text()))

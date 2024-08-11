@@ -507,7 +507,7 @@
 <a id="snailz.surveymap"></a>
     <div class="doc doc-contents first">
 
-      <p>Create map of survey points.</p>
+      <p>Create map of snailz survey points based on generated data.</p>
 
 
 
@@ -532,12 +532,67 @@
 
     <div class="doc doc-contents ">
 
-      <p>Main driver.</p>
+      <p>Main driver for snailz map creation.</p>
+<ul>
+<li>options.samples: path to samples CSV file.</li>
+<li>options.outfile: optional path to saved output file.</li>
+</ul>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td><code>options</code></td>
+            <td>
+                  <code><span title="argparse.Namespace">Namespace</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>see list above.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    <p><span class="doc-section-title">Returns:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                  <code>None</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Either writes the generated map to a file or displays it in the browser.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
 
             <details class="quote">
               <summary>Source code in <code>snailz/surveymap.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 7</span>
-<span class="normal"> 8</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 8</span>
 <span class="normal"> 9</span>
 <span class="normal">10</span>
 <span class="normal">11</span>
@@ -555,8 +610,29 @@
 <span class="normal">23</span>
 <span class="normal">24</span>
 <span class="normal">25</span>
-<span class="normal">26</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">surveymap</span><span class="p">(</span><span class="n">options</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&#39;&#39;&#39;Main driver.&#39;&#39;&#39;</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">surveymap</span><span class="p">(</span><span class="n">options</span><span class="p">:</span> <span class="n">Namespace</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&#39;&#39;&#39;Main driver for snailz map creation.</span>
+
+<span class="sd">    -   options.samples: path to samples CSV file.</span>
+<span class="sd">    -   options.outfile: optional path to saved output file.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        options: see list above.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        Either writes the generated map to a file or displays it in the browser.</span>
+<span class="sd">    &#39;&#39;&#39;</span>
     <span class="n">samples</span> <span class="o">=</span> <span class="n">pl</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">options</span><span class="o">.</span><span class="n">samples</span><span class="p">)[</span><span class="s1">&#39;survey_id&#39;</span><span class="p">,</span> <span class="s1">&#39;lon&#39;</span><span class="p">,</span> <span class="s1">&#39;lat&#39;</span><span class="p">]</span>
     <span class="n">fig</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Figure</span><span class="p">(</span><span class="n">go</span><span class="o">.</span><span class="n">Scattermapbox</span><span class="p">(</span>
         <span class="n">lon</span><span class="o">=</span><span class="n">samples</span><span class="p">[</span><span class="s1">&#39;lon&#39;</span><span class="p">],</span>

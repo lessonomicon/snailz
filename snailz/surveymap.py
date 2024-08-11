@@ -1,11 +1,22 @@
-'''Create map of survey points.'''
+'''Create map of snailz survey points based on generated data.'''
 
+from argparse import Namespace
 import plotly.graph_objects as go
 import polars as pl
 
 
-def surveymap(options):
-    '''Main driver.'''
+def surveymap(options: Namespace) -> None:
+    '''Main driver for snailz map creation.
+
+    -   options.samples: path to samples CSV file.
+    -   options.outfile: optional path to saved output file.
+
+    Args:
+        options: see list above.
+
+    Returns:
+        Either writes the generated map to a file or displays it in the browser.
+    '''
     samples = pl.read_csv(options.samples)['survey_id', 'lon', 'lat']
     fig = go.Figure(go.Scattermapbox(
         lon=samples['lon'],

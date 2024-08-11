@@ -376,15 +376,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#snailz.plates._create_files" class="md-nav__link">
-    <span class="md-ellipsis">
-      _create_files
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#snailz.plates._generate" class="md-nav__link">
     <span class="md-ellipsis">
       _generate
@@ -442,6 +433,15 @@
   <a href="#snailz.plates._make_treatment" class="md-nav__link">
     <span class="md-ellipsis">
       _make_treatment
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#snailz.plates._normalize_csv" class="md-nav__link">
+    <span class="md-ellipsis">
+      _normalize_csv
     </span>
   </a>
   
@@ -567,15 +567,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#snailz.plates._create_files" class="md-nav__link">
-    <span class="md-ellipsis">
-      _create_files
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#snailz.plates._generate" class="md-nav__link">
     <span class="md-ellipsis">
       _generate
@@ -639,6 +630,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#snailz.plates._normalize_csv" class="md-nav__link">
+    <span class="md-ellipsis">
+      _normalize_csv
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#snailz.plates._save" class="md-nav__link">
     <span class="md-ellipsis">
       _save
@@ -671,7 +671,7 @@
 <a id="snailz.plates"></a>
     <div class="doc doc-contents first">
 
-      <p>Generate random plates.</p>
+      <p>Generate random assay plates.</p>
 
 
 
@@ -696,41 +696,57 @@
 
     <div class="doc doc-contents ">
 
-      <p>Main driver.</p>
+      <p>Main driver for snailz plate creation.</p>
+
+
+<details class="each-plate-is-represented-by-two-files" open>
+  <summary>one with the design and one with the results.</summary>
+  <p>Plate generation re-uses assay parameters: see <code>assays.py</code> for details.
+Plates are saved in the specified output directory with auto-generated names.</p>
+</details>      <ul>
+<li>options.assays: path to assay parameter files.</li>
+<li>options.designs: output directory for plate design files.</li>
+<li>options.readings: output directory for plate reading files.</li>
+</ul>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td><code>options</code></td>
+            <td>
+                  <code><span title="argparse.Namespace">Namespace</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>see above.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+      </tbody>
+    </table>
 
             <details class="quote">
               <summary>Source code in <code>snailz/plates.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">17</span>
-<span class="normal">18</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">18</span>
 <span class="normal">19</span>
 <span class="normal">20</span>
-<span class="normal">21</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">plates</span><span class="p">(</span><span class="n">options</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&#39;&#39;&#39;Main driver.&#39;&#39;&#39;</span>
-    <span class="n">options</span><span class="o">.</span><span class="n">params</span> <span class="o">=</span> <span class="n">load_params</span><span class="p">(</span><span class="n">AssayParams</span><span class="p">,</span> <span class="n">options</span><span class="o">.</span><span class="n">params</span><span class="p">)</span>
-    <span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="n">options</span><span class="o">.</span><span class="n">params</span><span class="o">.</span><span class="n">seed</span><span class="p">)</span>
-    <span class="n">_create_files</span><span class="p">(</span><span class="n">options</span><span class="p">)</span>
-</code></pre></div></td></tr></table></div>
-            </details>
-    </div>
-
-</div>
-
-<div class="doc doc-object doc-function">
-
-
-<h2 id="snailz.plates._create_files" class="doc doc-heading">
-            <code class="highlight language-python"><span class="n">_create_files</span><span class="p">(</span><span class="n">options</span><span class="p">)</span></code>
-
-</h2>
-
-
-    <div class="doc doc-contents ">
-
-      <p>Create randomized plate files.</p>
-
-            <details class="quote">
-              <summary>Source code in <code>snailz/plates.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">24</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
 <span class="normal">25</span>
 <span class="normal">26</span>
 <span class="normal">27</span>
@@ -739,8 +755,30 @@
 <span class="normal">30</span>
 <span class="normal">31</span>
 <span class="normal">32</span>
-<span class="normal">33</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">_create_files</span><span class="p">(</span><span class="n">options</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&#39;&#39;&#39;Create randomized plate files.&#39;&#39;&#39;</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">plates</span><span class="p">(</span><span class="n">options</span><span class="p">:</span> <span class="n">Namespace</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&#39;&#39;&#39;Main driver for snailz plate creation.</span>
+
+<span class="sd">    Each plate is represented by two files: one with the design and one with the results.</span>
+<span class="sd">      Plate generation re-uses assay parameters: see `assays.py` for details.</span>
+<span class="sd">      Plates are saved in the specified output directory with auto-generated names.</span>
+
+<span class="sd">    -   options.assays: path to assay parameter files.</span>
+<span class="sd">    -   options.designs: output directory for plate design files.</span>
+<span class="sd">    -   options.readings: output directory for plate reading files.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        options: see above.</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="n">options</span><span class="o">.</span><span class="n">params</span> <span class="o">=</span> <span class="n">load_params</span><span class="p">(</span><span class="n">AssayParams</span><span class="p">,</span> <span class="n">options</span><span class="o">.</span><span class="n">params</span><span class="p">)</span>
+    <span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="n">options</span><span class="o">.</span><span class="n">params</span><span class="o">.</span><span class="n">seed</span><span class="p">)</span>
     <span class="k">for</span> <span class="n">filename</span><span class="p">,</span> <span class="n">sample_id</span><span class="p">,</span> <span class="n">kind</span> <span class="ow">in</span> <span class="n">_join_assay_data</span><span class="p">(</span><span class="n">options</span><span class="p">):</span>
         <span class="n">_make_plate</span><span class="p">(</span>
             <span class="n">options</span><span class="o">.</span><span class="n">params</span><span class="p">,</span>
@@ -767,19 +805,114 @@
     <div class="doc doc-contents ">
 
       <p>Make body of plate design or results.</p>
+<ul>
+<li>Each result is represented as a rectangular list of lists.</li>
+<li>The first row of each result is lettered started with 'A' like a spreadsheet.</li>
+<li>Each subsequent row starts with a row number from '1' like a spreadsheet.</li>
+</ul>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td><code>params</code></td>
+            <td>
+                  <code><a class="autorefs autorefs-internal" title="snailz.params.AssayParams" href="../params/#snailz.params.AssayParams">AssayParams</a></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>assay parameters.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code>func</code></td>
+            <td>
+                  <code>callable</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>function used to generate interior table value</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    <p><span class="doc-section-title">Returns:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                  <code>list</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Rectangular list-of-lists.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
 
             <details class="quote">
               <summary>Source code in <code>snailz/plates.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">36</span>
-<span class="normal">37</span>
-<span class="normal">38</span>
-<span class="normal">39</span>
-<span class="normal">40</span>
-<span class="normal">41</span>
-<span class="normal">42</span>
-<span class="normal">43</span>
-<span class="normal">44</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">_generate</span><span class="p">(</span><span class="n">params</span><span class="p">,</span> <span class="n">func</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&#39;&#39;&#39;Make body of plate design or results.&#39;&#39;&#39;</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">44</span>
+<span class="normal">45</span>
+<span class="normal">46</span>
+<span class="normal">47</span>
+<span class="normal">48</span>
+<span class="normal">49</span>
+<span class="normal">50</span>
+<span class="normal">51</span>
+<span class="normal">52</span>
+<span class="normal">53</span>
+<span class="normal">54</span>
+<span class="normal">55</span>
+<span class="normal">56</span>
+<span class="normal">57</span>
+<span class="normal">58</span>
+<span class="normal">59</span>
+<span class="normal">60</span>
+<span class="normal">61</span>
+<span class="normal">62</span>
+<span class="normal">63</span>
+<span class="normal">64</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">_generate</span><span class="p">(</span><span class="n">params</span><span class="p">:</span> <span class="n">AssayParams</span><span class="p">,</span> <span class="n">func</span><span class="p">:</span> <span class="nb">callable</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&#39;&#39;&#39;Make body of plate design or results.</span>
+
+<span class="sd">    -   Each result is represented as a rectangular list of lists.</span>
+<span class="sd">    -   The first row of each result is lettered started with &#39;A&#39; like a spreadsheet.</span>
+<span class="sd">    -   Each subsequent row starts with a row number from &#39;1&#39; like a spreadsheet.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        params: assay parameters.</span>
+<span class="sd">        func: function used to generate interior table value</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        Rectangular list-of-lists.</span>
+<span class="sd">    &#39;&#39;&#39;</span>
     <span class="n">title_row</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="o">*</span><span class="p">[</span><span class="nb">chr</span><span class="p">(</span><span class="nb">ord</span><span class="p">(</span><span class="s1">&#39;A&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="n">col</span><span class="p">)</span> <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">PLATE_WIDTH</span><span class="p">)]]</span>
     <span class="n">values</span> <span class="o">=</span> <span class="p">[</span>
         <span class="p">[</span><span class="n">func</span><span class="p">(</span><span class="n">params</span><span class="p">,</span> <span class="n">_make_placement</span><span class="p">)</span> <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">PLATE_WIDTH</span><span class="p">)]</span>
@@ -806,15 +939,81 @@
 
       <p>Get experiment type and plate filename from data.</p>
 
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td><code>options</code></td>
+            <td>
+                  <code><span title="argparse.Namespace">Namespace</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>see above.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    <p><span class="doc-section-title">Returns:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                  <code>callable</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Generator that produces tuples of plate filename, plate, and experiment.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
             <details class="quote">
               <summary>Source code in <code>snailz/plates.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">47</span>
-<span class="normal">48</span>
-<span class="normal">49</span>
-<span class="normal">50</span>
-<span class="normal">51</span>
-<span class="normal">52</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">_join_assay_data</span><span class="p">(</span><span class="n">options</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&#39;&#39;&#39;Get experiment type and plate filename from data.&#39;&#39;&#39;</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">67</span>
+<span class="normal">68</span>
+<span class="normal">69</span>
+<span class="normal">70</span>
+<span class="normal">71</span>
+<span class="normal">72</span>
+<span class="normal">73</span>
+<span class="normal">74</span>
+<span class="normal">75</span>
+<span class="normal">76</span>
+<span class="normal">77</span>
+<span class="normal">78</span>
+<span class="normal">79</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">_join_assay_data</span><span class="p">(</span><span class="n">options</span><span class="p">:</span> <span class="n">Namespace</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">callable</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&#39;&#39;&#39;Get experiment type and plate filename from data.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        options: see above.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        Generator that produces tuples of plate filename, plate, and experiment.</span>
+<span class="sd">    &#39;&#39;&#39;</span>
     <span class="n">assays</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="n">options</span><span class="o">.</span><span class="n">assays</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">))</span>
     <span class="n">experiments</span> <span class="o">=</span> <span class="p">{</span><span class="n">x</span><span class="p">[</span><span class="s1">&#39;sample_id&#39;</span><span class="p">]:</span> <span class="n">x</span><span class="p">[</span><span class="s1">&#39;kind&#39;</span><span class="p">]</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">assays</span><span class="p">[</span><span class="s1">&#39;experiment&#39;</span><span class="p">]}</span>
     <span class="n">plates</span> <span class="o">=</span> <span class="p">{</span><span class="n">p</span><span class="p">[</span><span class="s1">&#39;filename&#39;</span><span class="p">]:</span> <span class="n">p</span><span class="p">[</span><span class="s1">&#39;sample_id&#39;</span><span class="p">]</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">assays</span><span class="p">[</span><span class="s1">&#39;plate&#39;</span><span class="p">]}</span>
@@ -838,15 +1037,97 @@
 
       <p>Make head of plate.</p>
 
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td><code>kind</code></td>
+            <td>
+                  <code>str</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>kind of experiment ('calibration' or other).</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code>sample_id</code></td>
+            <td>
+                  <code>int</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>which sample this experiment is for.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    <p><span class="doc-section-title">Returns:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                  <code>list</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>List-of-lists representation of head of plate.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
             <details class="quote">
               <summary>Source code in <code>snailz/plates.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">55</span>
-<span class="normal">56</span>
-<span class="normal">57</span>
-<span class="normal">58</span>
-<span class="normal">59</span>
-<span class="normal">60</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">_make_head</span><span class="p">(</span><span class="n">kind</span><span class="p">,</span> <span class="n">sample_id</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&#39;&#39;&#39;Make head of plate.&#39;&#39;&#39;</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">82</span>
+<span class="normal">83</span>
+<span class="normal">84</span>
+<span class="normal">85</span>
+<span class="normal">86</span>
+<span class="normal">87</span>
+<span class="normal">88</span>
+<span class="normal">89</span>
+<span class="normal">90</span>
+<span class="normal">91</span>
+<span class="normal">92</span>
+<span class="normal">93</span>
+<span class="normal">94</span>
+<span class="normal">95</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">_make_head</span><span class="p">(</span><span class="n">kind</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">sample_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&#39;&#39;&#39;Make head of plate.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        kind: kind of experiment (&#39;calibration&#39; or other).</span>
+<span class="sd">        sample_id: which sample this experiment is for.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        List-of-lists representation of head of plate.</span>
+<span class="sd">    &#39;&#39;&#39;</span>
     <span class="k">return</span> <span class="p">[</span>
         <span class="p">[</span><span class="n">MODEL</span><span class="p">,</span> <span class="n">kind</span><span class="p">,</span> <span class="n">sample_id</span><span class="p">],</span>
         <span class="p">[],</span>
@@ -868,22 +1149,88 @@
 
     <div class="doc doc-contents ">
 
-      <p>Generate random placement of samples.</p>
+      <p>Generate random arrangement of sample locations in plate.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td><code>kind</code></td>
+            <td>
+                  <code>str</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>kind of experiment ('calibration' or other).</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    <p><span class="doc-section-title">Returns:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                  <code>tuple</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Tuple of sample placements and column orders.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
 
             <details class="quote">
               <summary>Source code in <code>snailz/plates.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">63</span>
-<span class="normal">64</span>
-<span class="normal">65</span>
-<span class="normal">66</span>
-<span class="normal">67</span>
-<span class="normal">68</span>
-<span class="normal">69</span>
-<span class="normal">70</span>
-<span class="normal">71</span>
-<span class="normal">72</span>
-<span class="normal">73</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">_make_placement</span><span class="p">(</span><span class="n">kind</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&#39;&#39;&#39;Generate random placement of samples.&#39;&#39;&#39;</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 98</span>
+<span class="normal"> 99</span>
+<span class="normal">100</span>
+<span class="normal">101</span>
+<span class="normal">102</span>
+<span class="normal">103</span>
+<span class="normal">104</span>
+<span class="normal">105</span>
+<span class="normal">106</span>
+<span class="normal">107</span>
+<span class="normal">108</span>
+<span class="normal">109</span>
+<span class="normal">110</span>
+<span class="normal">111</span>
+<span class="normal">112</span>
+<span class="normal">113</span>
+<span class="normal">114</span>
+<span class="normal">115</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">_make_placement</span><span class="p">(</span><span class="n">kind</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&#39;&#39;&#39;Generate random arrangement of sample locations in plate.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        kind: kind of experiment (&#39;calibration&#39; or other).</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        Tuple of sample placements and column orders.</span>
+<span class="sd">    &#39;&#39;&#39;</span>
     <span class="n">placement</span> <span class="o">=</span> <span class="p">[[</span><span class="kc">False</span> <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">PLATE_WIDTH</span><span class="p">)]</span> <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">PLATE_HEIGHT</span><span class="p">)]</span>
     <span class="k">if</span> <span class="n">kind</span> <span class="o">==</span> <span class="s1">&#39;calibration&#39;</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">placement</span><span class="p">,</span> <span class="p">[]</span>
@@ -910,20 +1257,137 @@
 
     <div class="doc doc-contents ">
 
-      <p>Generate an entire plate.</p>
+      <p>Generate an entire experimental plate.</p>
+<ol>
+<li>Build overall placement grid and sample locations.</li>
+<li>Make head and body of design file and save it.</li>
+<li>Make random readings for plate cells and save.</li>
+<li>Save plate and design in respective output directories.</li>
+</ol>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td><code>params</code></td>
+            <td>
+                  <code><a class="autorefs autorefs-internal" title="snailz.params.AssayParams" href="../params/#snailz.params.AssayParams">AssayParams</a></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>assay parameters.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code>sample_id</code></td>
+            <td>
+                  <code>str</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>which sample this plate is for.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code>kind</code></td>
+            <td>
+                  <code>str</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>'calibration' or something else.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code>design_file</code></td>
+            <td>
+                  <code>str</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>where to write design.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code>readings_file</code></td>
+            <td>
+                  <code>str</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>where to write readings.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+      </tbody>
+    </table>
 
             <details class="quote">
               <summary>Source code in <code>snailz/plates.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">76</span>
-<span class="normal">77</span>
-<span class="normal">78</span>
-<span class="normal">79</span>
-<span class="normal">80</span>
-<span class="normal">81</span>
-<span class="normal">82</span>
-<span class="normal">83</span>
-<span class="normal">84</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">_make_plate</span><span class="p">(</span><span class="n">params</span><span class="p">,</span> <span class="n">sample_id</span><span class="p">,</span> <span class="n">kind</span><span class="p">,</span> <span class="n">design_file</span><span class="p">,</span> <span class="n">readings_file</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&#39;&#39;&#39;Generate an entire plate.&#39;&#39;&#39;</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">118</span>
+<span class="normal">119</span>
+<span class="normal">120</span>
+<span class="normal">121</span>
+<span class="normal">122</span>
+<span class="normal">123</span>
+<span class="normal">124</span>
+<span class="normal">125</span>
+<span class="normal">126</span>
+<span class="normal">127</span>
+<span class="normal">128</span>
+<span class="normal">129</span>
+<span class="normal">130</span>
+<span class="normal">131</span>
+<span class="normal">132</span>
+<span class="normal">133</span>
+<span class="normal">134</span>
+<span class="normal">135</span>
+<span class="normal">136</span>
+<span class="normal">137</span>
+<span class="normal">138</span>
+<span class="normal">139</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">_make_plate</span><span class="p">(</span><span class="n">params</span><span class="p">:</span> <span class="n">AssayParams</span><span class="p">,</span> <span class="n">sample_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">kind</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">design_file</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">readings_file</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&#39;&#39;&#39;Generate an entire experimental plate.</span>
+
+<span class="sd">    1.  Build overall placement grid and sample locations.</span>
+<span class="sd">    2.  Make head and body of design file and save it.</span>
+<span class="sd">    3.  Make random readings for plate cells and save.</span>
+<span class="sd">    4.  Save plate and design in respective output directories.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        params: assay parameters.</span>
+<span class="sd">        sample_id: which sample this plate is for.</span>
+<span class="sd">        kind: &#39;calibration&#39; or something else.</span>
+<span class="sd">        design_file: where to write design.</span>
+<span class="sd">        readings_file: where to write readings.</span>
+<span class="sd">    &#39;&#39;&#39;</span>
     <span class="n">placement</span><span class="p">,</span> <span class="n">sample_locs</span> <span class="o">=</span> <span class="n">_make_placement</span><span class="p">(</span><span class="n">kind</span><span class="p">)</span>
 
     <span class="n">design</span> <span class="o">=</span> <span class="p">[</span><span class="o">*</span><span class="n">_make_head</span><span class="p">(</span><span class="s1">&#39;design&#39;</span><span class="p">,</span> <span class="n">sample_id</span><span class="p">),</span> <span class="o">*</span><span class="n">_generate</span><span class="p">(</span><span class="n">params</span><span class="p">,</span> <span class="n">_make_treatment</span><span class="p">)]</span>
@@ -949,15 +1413,102 @@
     <div class="doc doc-contents ">
 
       <p>Generate a single plate reading.</p>
+<p>The reading is a random value whose mean depends on whether it is treated or a control.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td><code>params</code></td>
+            <td>
+                  <code><a class="autorefs autorefs-internal" title="snailz.params.AssayParams" href="../params/#snailz.params.AssayParams">AssayParams</a></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>assay parameters.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code>treated</code></td>
+            <td>
+                  <code>bool</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>is this location treated (versus a control)?</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    <p><span class="doc-section-title">Returns:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                  <code>float</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Randomly-generated reading value.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
 
             <details class="quote">
               <summary>Source code in <code>snailz/plates.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">87</span>
-<span class="normal">88</span>
-<span class="normal">89</span>
-<span class="normal">90</span>
-<span class="normal">91</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">_make_reading</span><span class="p">(</span><span class="n">params</span><span class="p">,</span> <span class="n">treated</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&#39;&#39;&#39;Generate a single plate reading.&#39;&#39;&#39;</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">142</span>
+<span class="normal">143</span>
+<span class="normal">144</span>
+<span class="normal">145</span>
+<span class="normal">146</span>
+<span class="normal">147</span>
+<span class="normal">148</span>
+<span class="normal">149</span>
+<span class="normal">150</span>
+<span class="normal">151</span>
+<span class="normal">152</span>
+<span class="normal">153</span>
+<span class="normal">154</span>
+<span class="normal">155</span>
+<span class="normal">156</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">_make_reading</span><span class="p">(</span><span class="n">params</span><span class="p">:</span> <span class="n">AssayParams</span><span class="p">,</span> <span class="n">treated</span><span class="p">:</span> <span class="nb">bool</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&#39;&#39;&#39;Generate a single plate reading.</span>
+
+<span class="sd">    The reading is a random value whose mean depends on whether it is treated or a control.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        params: assay parameters.</span>
+<span class="sd">        treated: is this location treated (versus a control)?</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        Randomly-generated reading value.</span>
+<span class="sd">    &#39;&#39;&#39;</span>
     <span class="n">mean</span> <span class="o">=</span> <span class="n">params</span><span class="o">.</span><span class="n">treated_val</span> <span class="k">if</span> <span class="n">treated</span> <span class="k">else</span> <span class="n">params</span><span class="o">.</span><span class="n">control_val</span>
     <span class="n">value</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">random</span><span class="o">.</span><span class="n">gauss</span><span class="p">(</span><span class="n">mean</span><span class="p">,</span> <span class="n">params</span><span class="o">.</span><span class="n">stdev</span><span class="p">))</span>
     <span class="k">return</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">value</span><span class="si">:</span><span class="s1">.02f</span><span class="si">}</span><span class="s1">&#39;</span>
@@ -978,15 +1529,200 @@
 
     <div class="doc doc-contents ">
 
-      <p>Generate a single plate treatment.</p>
+      <p>Select a single plate treatment.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td><code>params</code></td>
+            <td>
+                  <code><a class="autorefs autorefs-internal" title="snailz.params.AssayParams" href="../params/#snailz.params.AssayParams">AssayParams</a></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>assay parameters.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code>treated</code></td>
+            <td>
+                  <code>bool</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>is this location treated (versus a control)?</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    <p><span class="doc-section-title">Returns:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                  <code>str</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Treatment if this is a treated cell or a randomly-selected control if it is not.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
 
             <details class="quote">
               <summary>Source code in <code>snailz/plates.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">94</span>
-<span class="normal">95</span>
-<span class="normal">96</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">_make_treatment</span><span class="p">(</span><span class="n">params</span><span class="p">,</span> <span class="n">treated</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&#39;&#39;&#39;Generate a single plate treatment.&#39;&#39;&#39;</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">159</span>
+<span class="normal">160</span>
+<span class="normal">161</span>
+<span class="normal">162</span>
+<span class="normal">163</span>
+<span class="normal">164</span>
+<span class="normal">165</span>
+<span class="normal">166</span>
+<span class="normal">167</span>
+<span class="normal">168</span>
+<span class="normal">169</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">_make_treatment</span><span class="p">(</span><span class="n">params</span><span class="p">:</span> <span class="n">AssayParams</span><span class="p">,</span> <span class="n">treated</span><span class="p">:</span> <span class="nb">bool</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&#39;&#39;&#39;Select a single plate treatment.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        params: assay parameters.</span>
+<span class="sd">        treated: is this location treated (versus a control)?</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        Treatment if this is a treated cell or a randomly-selected control if it is not.</span>
+<span class="sd">    &#39;&#39;&#39;</span>
     <span class="k">return</span> <span class="n">params</span><span class="o">.</span><span class="n">treatment</span> <span class="k">if</span> <span class="n">treated</span> <span class="k">else</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">params</span><span class="o">.</span><span class="n">controls</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h2 id="snailz.plates._normalize_csv" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">_normalize_csv</span><span class="p">(</span><span class="n">rows</span><span class="p">)</span></code>
+
+</h2>
+
+
+    <div class="doc doc-contents ">
+
+      <p>Make sure all rows in list-of-lists table are the same length.</p>
+<p>Short rows are extended with empty string values to match the length of the longest row.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td><code>rows</code></td>
+            <td>
+                  <code>list</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>input list of lists.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    <p><span class="doc-section-title">Returns:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                  <code>list</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Adjusted list of lists.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+            <details class="quote">
+              <summary>Source code in <code>snailz/plates.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">172</span>
+<span class="normal">173</span>
+<span class="normal">174</span>
+<span class="normal">175</span>
+<span class="normal">176</span>
+<span class="normal">177</span>
+<span class="normal">178</span>
+<span class="normal">179</span>
+<span class="normal">180</span>
+<span class="normal">181</span>
+<span class="normal">182</span>
+<span class="normal">183</span>
+<span class="normal">184</span>
+<span class="normal">185</span>
+<span class="normal">186</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">_normalize_csv</span><span class="p">(</span><span class="n">rows</span><span class="p">:</span> <span class="nb">list</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&#39;&#39;&#39;Make sure all rows in list-of-lists table are the same length.</span>
+
+<span class="sd">    Short rows are extended with empty string values to match the length of the longest row.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        rows: input list of lists.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        Adjusted list of lists.</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="n">required</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">r</span><span class="p">)</span> <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">rows</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">rows</span><span class="p">:</span>
+        <span class="n">row</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span><span class="s1">&#39;&#39;</span><span class="p">]</span> <span class="o">*</span> <span class="p">(</span><span class="n">required</span> <span class="o">-</span> <span class="nb">len</span><span class="p">(</span><span class="n">row</span><span class="p">)))</span>
+    <span class="k">return</span> <span class="n">rows</span>
 </code></pre></div></td></tr></table></div>
             </details>
     </div>
@@ -1004,17 +1740,70 @@
 
     <div class="doc doc-contents ">
 
-      <p>Save as CSV.</p>
+      <p>Save results to file or show on standard output.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td><code>filename</code></td>
+            <td>
+                  <code>str | None</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>output file (or None to write to standard output)</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code>rows</code></td>
+            <td>
+                  <code>list</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>data to write.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+      </tbody>
+    </table>
 
             <details class="quote">
               <summary>Source code in <code>snailz/plates.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">106</span>
-<span class="normal">107</span>
-<span class="normal">108</span>
-<span class="normal">109</span>
-<span class="normal">110</span>
-<span class="normal">111</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">_save</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">rows</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&#39;&#39;&#39;Save as CSV.&#39;&#39;&#39;</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">189</span>
+<span class="normal">190</span>
+<span class="normal">191</span>
+<span class="normal">192</span>
+<span class="normal">193</span>
+<span class="normal">194</span>
+<span class="normal">195</span>
+<span class="normal">196</span>
+<span class="normal">197</span>
+<span class="normal">198</span>
+<span class="normal">199</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">_save</span><span class="p">(</span><span class="n">filename</span><span class="p">:</span> <span class="nb">str</span><span class="o">|</span><span class="kc">None</span><span class="p">,</span> <span class="n">rows</span><span class="p">:</span> <span class="nb">list</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&#39;&#39;&#39;Save results to file or show on standard output.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        filename: output file (or None to write to standard output)</span>
+<span class="sd">        rows: data to write.</span>
+<span class="sd">    &#39;&#39;&#39;</span>
     <span class="k">if</span> <span class="ow">not</span> <span class="n">filename</span><span class="p">:</span>
         <span class="n">csv</span><span class="o">.</span><span class="n">writer</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">stdout</span><span class="p">)</span><span class="o">.</span><span class="n">writerows</span><span class="p">(</span><span class="n">rows</span><span class="p">)</span>
     <span class="k">else</span><span class="p">:</span>

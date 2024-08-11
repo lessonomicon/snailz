@@ -1,11 +1,13 @@
-'''Mangle readings files.'''
+'''Mangle readings plate files to simulate poor formatting.'''
 
+from argparse import Namespace
 import csv
 from pathlib import Path
 import random
 import sqlite3
 
 
+# Query used to join records from database.
 SELECT = '''
 select
     plate.plate_id as plate_id,
@@ -23,21 +25,39 @@ on
 '''
 
 
-def mangle(options):
-    '''Main driver.'''
+def mangle(options: Namespace) -> None:
+    '''Main driver for mangling readings plates.
+
+    -   options.dbfile: path to SQLite database.
+    -   options.outdir: output directory.
+    -   options.tidy: directory containing tidy readings files.
+
+    Mangled files are written to the specified output directory.
+      The files have the same name as the original (tidy) files.
+
+    Args:
+        options: see above.
+    '''
     con = sqlite3.connect(options.dbfile)
     con.row_factory = sqlite3.Row
-    rows = list(dict(r) for r in con.execute(SELECT).fetchall())
-    random.seed(len(rows))
-    rows = _consolidate(rows)
-    for row in rows:
-        _mangle_file(options, row)
+    records = list(dict(r) for r in con.execute(SELECT).fetchall())
+    random.seed(len(records))
+    records = _consolidate(records)
+    for rec in records:
+        _mangle_file(options, rec)
 
 
-def _consolidate(rows):
-    '''Pick a single record at random for each physical plate.'''
+def _consolidate(records: list) -> list:
+    '''Pick a single (plate, staff) pair for each plate.
+
+    Args:
+        records: list of (plate, staff) pairs from database.
+
+    Returns:
+        One (plate, staff) pair for each plate.
+    '''
     grouped = {}
-    for r in rows:
+    for r in records:
         if r['plate_id'] not in grouped:
             grouped[r['plate_id']] = []
         grouped[r['plate_id']].append(r)
@@ -48,49 +68,86 @@ def _consolidate(rows):
     return result
 
 
-def _mangle_file(options, settings):
-    '''Mangle a single file.'''
-    sections = _read_sections(options, settings['filename'])
+def _mangle_file(options: Namespace, record: dict) -> None:
+    '''Mangle a single file.
+
+    1.  Read file as header and body sections.
+    2.  Apply randomly-chosen mangling functions to modify in place.
+    3.  Save result.
+
+    Args:
+        options: see above.
+        record: dictionary of database query results for a single record.
+    '''
+    sections = _read_sections(options, record['filename'])
     for func in (_do_staff_name, _do_date, _do_footer, _do_indent,):
         if random.random() < func.prob:
-            func(settings, sections)
-    _write_sections(options, settings['filename'], sections)
+            func(record, sections)
+    _write_sections(options, record['filename'], sections)
 
 
-def _do_date(settings, sections):
-    '''Mangle by adding date in header.'''
+def _do_date(record: dict, sections: dict) -> None:
+    '''Mangle data in place by adding date in header.
+
+    Args:
+        record: entire record data.
+        sections: dictionary of header, body, and footer.
+    '''
     row = [''] * len(sections['header'][0])
     row[0] = 'Date'
-    row[1] = settings['date']
+    row[1] = record['date']
     sections['header'].append(row)
 _do_date.prob = 0.1
 
 
-def _do_footer(settings, sections):
-    '''Mangle by adding a footer.'''
+def _do_footer(record: dict, sections: dict) -> None:
+    '''Mangle data in place by adding a footer.
+
+    Args:
+        record: entire record data.
+        sections: dictionary of header, body, and footer.
+    '''
     blank = [''] * len(sections['header'][0])
     foot = [''] * len(sections['header'][0])
-    foot[0] = settings['staff_id']
+    foot[0] = record['staff_id']
     sections['footer'] = [blank, foot]
 _do_footer.prob = 0.1
 
 
-def _do_indent(settings, sections):
-    '''Mangle by indenting.'''
+def _do_indent(record: dict, sections: dict) -> None:
+    '''Mangle data in place by indenting all rows by one space
+
+    Args:
+        record: entire record data.
+        sections: dictionary of header, body, and footer.
+    '''
     for section in sections.values():
         for row in section:
             row.insert(0, '')
 _do_indent.prob = 0.1
 
 
-def _do_staff_name(settings, sections):
-    '''Mangle by adding staff name.'''
-    sections['header'][0][-2] = f'{settings["personal"]} {settings["family"]}'
+def _do_staff_name(record: dict, sections: dict) -> None:
+    '''Mangle data in place by adding staff name.
+
+    Args:
+        record: entire record data.
+        sections: dictionary of header, body, and footer.
+    '''
+    sections['header'][0][-2] = f'{record["personal"]} {record["family"]}'
 _do_staff_name.prob = 0.1
 
 
-def _read_sections(options, filename):
-    '''Read tidy file and split into sections.'''
+def _read_sections(options: Namespace, filename: str) -> dict:
+    '''Read tidy readings file and split into sections.
+
+    Args:
+        options: see above.
+        filename: file to read from.
+
+    Returns:
+        Dictionary with header, head-to-body spacing, body, and footer (empty in tidy file).
+    '''
     with open(Path(options.tidy, filename), 'r') as raw:
         rows = [row for row in csv.reader(raw)]
     return {
@@ -101,8 +158,14 @@ def _read_sections(options, filename):
     }
 
 
-def _write_sections(options, filename, sections):
-    '''Write sections of mangled file.'''
+def _write_sections(options: Namespace, filename: str, sections: dict) -> None:
+    '''Write sections of mangled file to file.
+
+    Args:
+        options: see above.
+        filename: file to write to.
+        sections: dictionary of header, head-to-body spacing, body, and footer.
+    '''
     with open(Path(options.outdir, filename), 'w') as raw:
         writer = csv.writer(raw, lineterminator='\n')
         for section in sections.values():

@@ -1,11 +1,14 @@
-'''Generate database from data files.'''
+'''Generate snailz SQLite database from data files.'''
 
+from argparse import Namespace
 import json
 import polars as pl
 import sqlite3
 
+from .params import DATE_FORMAT
 
-ISO_DATE = '%Y-%m-%d'
+
+# Database schema.
 SCHEMA = '''\
 DROP TABLE IF EXISTS site;
 CREATE TABLE site (
@@ -70,8 +73,19 @@ CREATE TABLE invalidated (
 '''
 
 
-def db(options):
-    '''Main driver.'''
+def db(options: Namespace) -> None:
+    '''Main driver for database generator.
+
+    Args:
+        options: controlling options.
+
+    -   dbfile: output database file.
+    -   assays: generated assay data.
+    -   samples: generated sample data.
+    -   sites: site parameters.
+    -   staff: generated staff data.
+    -   surveys: survey parameters.
+    '''
     _create_schema(options.dbfile)
 
     url = f'sqlite:///{options.dbfile}'
@@ -88,14 +102,26 @@ def db(options):
     _json_to_db(url, assays, 'invalidated', dates=['date'])
 
 
-def _create_schema(dbfile):
-    '''Create database schema.'''
+def _create_schema(dbfile: str) -> None:
+    '''Create database schema.
+
+    Args:
+        dbfile: database file path.
+    '''
     connection = sqlite3.connect(dbfile)
     connection.executescript(SCHEMA)
 
 
-def _csv_to_db(url, name, source, dates=[], columns=[]):
-    '''Create table from CSV.'''
+def _csv_to_db(url: str, name: str, source: str, dates: list = [], columns: list = []) -> None:
+    '''Fill table from CSV.
+
+    Args:
+        url: connection URL for database.
+        name: table name.
+        source: path to CSV source file.
+        dates: columns to convert to dates.
+        columns: subset of columns to store in table.
+    '''
     df = pl.read_csv(source)
     if columns:
         df = df[columns]
@@ -103,15 +129,30 @@ def _csv_to_db(url, name, source, dates=[], columns=[]):
     df.write_database(name, url, if_table_exists='append')
 
 
-def _json_to_db(url, data, name, dates=[]):
-    '''Create table from JSON.'''
+def _json_to_db(url: str, data: dict, name: str, dates: list = []) -> None:
+    '''Fill table from JSON.
+
+    Args:
+        url: connection URL for database.
+        data: JSON data.
+        name: table name (must be field in `data`).
+        dates: columns to convert to dates.
+    '''
     df = pl.DataFrame(data[name])
     df = _convert_dates(df, dates)
     df.write_database(name, url, if_table_exists='append')
 
 
-def _convert_dates(df, dates):
-    '''Convert text columns to dates.'''
+def _convert_dates(df: pl.DataFrame, dates: list) -> pl.DataFrame:
+    '''Convert text columns to dates.
+
+    Args:
+        df: input dataframe.
+        dates: list of names of columns to convert.
+
+    Returns:
+        Updated dataframe.
+    '''
     for colname in dates:
-        df = df.with_columns(pl.col(colname).str.to_date(ISO_DATE))
+        df = df.with_columns(pl.col(colname).str.to_date(DATE_FORMAT))
     return df
