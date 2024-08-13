@@ -41,7 +41,7 @@ def plates(options: Namespace) -> None:
         )
 
 
-def _generate(params: AssayParams, func: callable) -> list:
+def _generate(params: AssayParams, sample_locs: list, func: callable) -> list:
     '''Make body of plate design or results.
 
     -   Each result is represented as a rectangular list of lists.
@@ -50,6 +50,7 @@ def _generate(params: AssayParams, func: callable) -> list:
 
     Args:
         params: assay parameters.
+        sample_locs: location of sample in each row of plate
         func: function used to generate interior table value
 
     Returns:
@@ -57,7 +58,7 @@ def _generate(params: AssayParams, func: callable) -> list:
     '''
     title_row = ['', *[chr(ord('A') + col) for col in range(PLATE_WIDTH)]]
     values = [
-        [func(params, _make_placement) for col in range(PLATE_WIDTH)]
+        [func(params, col == sample_locs[row]) for col in range(PLATE_WIDTH)]
         for row in range(PLATE_HEIGHT)
     ]
     labeled = [[str(i + 1), *r] for (i, r) in enumerate(values)]
@@ -132,10 +133,10 @@ def _make_plate(params: AssayParams, sample_id: str, kind: str, design_file: str
     '''
     placement, sample_locs = _make_placement(kind)
 
-    design = [*_make_head('design', sample_id), *_generate(params, _make_treatment)]
+    design = [*_make_head('design', sample_id), *_generate(params, sample_locs, _make_treatment)]
     _save(design_file, _normalize_csv(design))
 
-    readings = [*_make_head('readings', sample_id), *_generate(params, _make_reading)]
+    readings = [*_make_head('readings', sample_id), *_generate(params, sample_locs, _make_reading)]
     _save(readings_file, _normalize_csv(readings))
 
 
@@ -166,7 +167,8 @@ def _make_treatment(params: AssayParams, treated: bool) -> str:
     Returns:
         Treatment if this is a treated cell or a randomly-selected control if it is not.
     '''
-    return params.treatment if treated else random.choice(params.controls)
+    result = params.treatment if treated else random.choice(params.controls)
+    return result
 
 
 def _normalize_csv(rows: list) -> list:
