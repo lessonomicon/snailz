@@ -17,9 +17,6 @@ from .surveymap import surveymap
 from .params import export_params
 
 
-TOUCH = '.touch'
-
-
 def main():
     '''Main driver.'''
     parser = argparse.ArgumentParser()
@@ -74,6 +71,10 @@ def everything(options: argparse.Namespace) -> None:
     surveys_params = Path(options.paramsdir, 'surveys.csv')
     surveymap_file = Path(options.datadir, 'survey.png')
 
+    # Ensure root data directory exists
+    _verbose(options, 'data directory')
+    Path(options.datadir).mkdir(exist_ok=True)
+
     # Grids
     _verbose(options, 'grids')
     grids_data_dir.mkdir(exist_ok=True)
@@ -82,7 +83,6 @@ def everything(options: argparse.Namespace) -> None:
         params=grids_params,
         sites=sites_params,
     ))
-    Path(grids_data_dir, TOUCH).touch()
 
     # Genomes
     _verbose(options, 'genomes')
@@ -129,8 +129,6 @@ def everything(options: argparse.Namespace) -> None:
         assays=assays_data,
         params=assays_params,
     ))
-    Path(designs_data_dir, TOUCH).touch()
-    Path(readings_data_dir, TOUCH).touch()
 
     # Database
     _verbose(options, 'db')
@@ -151,7 +149,6 @@ def everything(options: argparse.Namespace) -> None:
         tidy=readings_data_dir,
         outdir=mangled_data_dir,
     ))
-    Path(mangled_data_dir, TOUCH).touch()
 
     # Survey map
     if options.withmap:
