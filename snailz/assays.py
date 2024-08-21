@@ -1,12 +1,13 @@
 '''Generate snailz assays.'''
 
 from argparse import Namespace
-from datetime import date, datetime, timedelta
+from datetime import date, datetime, time, timedelta, timezone
 import json
 from pathlib import Path
 import polars as pl
 import random
 import string
+import pytz
 
 from .params import AssayParams, load_params
 
@@ -193,7 +194,7 @@ def _random_experiment_duration(params: AssayParams, kind: str) -> tuple:
         A pair with a start date and either an end date or `None`.
     '''
     start = random.uniform(params.startdate.timestamp(), params.enddate.timestamp())
-    start = datetime.fromtimestamp(start)
+    start = datetime.fromtimestamp(start, tz=timezone.utc)
     duration = timedelta(days=random.randint(*params.assay_duration))
     end = start + duration
     end = None if end > params.enddate else end
@@ -224,7 +225,6 @@ def _random_plates(params: AssayParams, kind: str, sample_id: int, start_id: int
         for i in range(random.randint(*params.assay_plates))
     ]
 
-
 def _random_date_interval(start_date: date, end_date: date) -> date:
     '''Choose a random date (inclusive).
 
@@ -235,12 +235,13 @@ def _random_date_interval(start_date: date, end_date: date) -> date:
     Returns:
         Randomly-selected date.
     '''
-    if isinstance(start_date, date):
-        start_date = datetime(*start_date.timetuple()[:3])
-    choice = random.uniform(start_date.timestamp(), end_date.timestamp())
-    choice = datetime.fromtimestamp(choice)
-    return _round_date(choice)
+    # Convert date to datetime at midnight UTC
+    start_datetime = datetime.combine(start_date, time.min).replace(tzinfo=pytz.UTC)
+    end_datetime = datetime.combine(end_date, time.max).replace(tzinfo=pytz.UTC)
 
+    choice_timestamp = random.uniform(start_datetime.timestamp(), end_datetime.timestamp())
+    choice = datetime.fromtimestamp(choice_timestamp, tz=pytz.UTC)
+    return _round_date(choice)
 
 def _round_date(raw: datetime|None) -> date|None:
     '''Round time to whole day.
@@ -251,8 +252,7 @@ def _round_date(raw: datetime|None) -> date|None:
     Returns:
         Input rounded to nearest whole day (or `None`).
     '''
-    return None if raw is None else date(*raw.timetuple()[:3])
-
+    return None if raw is None else raw.date()
 
 def _save(outfile: str, result: dict) -> None:
     '''Save or show generated data.
